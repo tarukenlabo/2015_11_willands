@@ -1,0 +1,31 @@
+経度緯度から住所を取得する逆ジオコーディング！！
+
+
+まず参考サイト
+GoogleMapsAPI以外のジオコーディングサービスまとめ↓
+http://ameblo.jp/katyos/entry-10223026969.html
+
+
+サイト内で紹介しているAPI
+
+１、独立行政法人　農業・食品産業技術総合研究機構
+http://www.finds.jp/
+
+２、YahooローカルサーチAPI
+http://developer.yahoo.co.jp/webapi/map/localsearch/v1/localsearch.html
+
+３、Google maps API
+https://developers.google.com/maps/?hl=ja
+
+
+３の参考記事
+
+・ジオコーディングと逆ジオコーディングをする方法(Google Geocoding APIの使い方)
+https://syncer.jp/how-to-use-geocoding-api
+
+・google mapsの逆ジオコーディング使い辛っ!
+http://www.milkstand.net/fsgarage/archives/001443.html
+
+
+・Googleの逆ジオコーディングをためしてみた
+http://creco.net/2009/03/07/implement_google_reverse_geocoding_api/
