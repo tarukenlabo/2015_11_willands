@@ -112,5 +112,21 @@
 		
 	}
 
+	//ユーザーからのコメント
+	function search_up_comment($p_id){
+
+		$db = new cls_db();
+		$dbh = $db->db_connect();
+
+		$dbh->query('SET NAMES utf8');
+		
+		$select = "SELECT * FROM user_post_comment WHERE P_ID=" . $p_id;
+		
+		$stmt = $dbh->prepare($select);
+		$stmt->execute();
+		
+		return $stmt;
+
+	}
 
 
