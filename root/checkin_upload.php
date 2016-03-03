@@ -11,3 +11,5 @@ $dbh = $db -> db_connect();
 
 var_dump($_dbh);
 //DBへの接続　ここまで
+
+
