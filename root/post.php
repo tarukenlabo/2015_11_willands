@@ -59,4 +59,31 @@
 		
 	}
 
+	//記事検索：チェックイン情報取得
+	function search_checkin($p_id){
+
+			$db = new cls_db();
+			$dbh = $db->db_connect();
+
+
+		$dbh->query('SET NAMES utf8');
+		
+		$select = "SELECT chk.C_ID, chk.P_ID, chk.U_ID, chk.C_POSIX, chk.C_POSIY, chk.C_DATE, chk.C_COMMENT, "
+					. "pht.C_PHOTO "
+					. "FROM post_check_in AS chk "
+					. "LEFT JOIN post_photo AS pht "
+					. "ON (chk.C_ID = pht.C_ID) "
+					. "WHERE chk.P_ID = " . $p_id . " "
+					. "ORDER BY P_ID";
+		
+		$stmt = $dbh->prepare($select);
+		$stmt->execute();
+
+		var_dump($stmt);
+
+		return $stmt;
+		
+	}
+
+
 
