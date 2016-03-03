@@ -1,0 +1,27 @@
+JavaScriptで位置情報を取得する方法(Geolocation API)
+https://syncer.jp/how-to-use-geolocation-api
+
+サンプルデモ
+https://syncer.jp/how-to-use-geolocation-api/demo/get-current-position.html
+
+HTML5新機能Geolocation APIで位置情報を取得する方法
+http://www.hp-stylelink.com/news/2013/08/20130830.php
+
+Geolocation APIで取得した現在地をGoogleMapsで表示する
+http://www.horihavalabo.jp/html5/location3.html
+
+HTML5とGoogle Map API V3を使って現在地を地図に表示する
+http://shared-blog.kddi-web.com/activity/210
+
+---
+Geolocation APIで現在地を連続的に取得する
+http://t-horikiri.hatenablog.jp/entry/20130126/1359210501
+
+（Google MAP APIで複数のポイントを一度に表示する）
+http://www.google-mapi.com/googlemaps/marker-add.html
+
+google map api v3で、1つの地図に複数のマーカー+吹き出しを表示 
+http://tanaka8.com/2011/11/google-map-markers/
+
+Googleマップのマーカーをクリックしたらリンク先へ遷移させる
+http://gimmicklog.main.jp/javascript/392/
