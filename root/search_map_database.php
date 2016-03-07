@@ -1,6 +1,6 @@
 <?php
 
-	require_once("./dbh_yoneda.php");
+	require_once("./db_connect.php");
 	
 	$db = new cls_db();
 	$dbh = $db->db_connect();
