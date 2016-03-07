@@ -1,12 +1,10 @@
 <?php
 //セッション作成
 session_start();
-
 if(!isset($_POST['login'])) {
   //ログインフォームを表示
   inputForm();
 } else {
-
   //フォームの値を取得
   $formName = $_POST['formName'];
   $formPass = $_POST['formPass'];
@@ -23,13 +21,17 @@ if(!isset($_POST['login'])) {
   require_once('./db.php');
 				
   //memberテーブルのデータを取得
-  $query = "select * from u_auth";
+  $query = "select * from u_auth WHERE U_NAME = '".$formName."'";
   $result = mysql_query($query);
+  
+  
+		
 		
   //フォームから取得したu_nameとデータベース内のu_nameが一致したらデータベースのPASSWORDを変数に格納		
   while($data = mysql_fetch_array($result)) {
     if($data['U_NAME'] == $formName) {  //フォームから取得したUSERIDとデータベースのUSERIDが一致
       $dbPass = $data['U_PASS'];
+      $userId = $data['U_ID'];//userIdを取得
       break;
     }
   }
@@ -49,6 +51,7 @@ if(!isset($_POST['login'])) {
 	  //ID,パスワードどちらも一致
 	  //セッション変数を作成→セッション変数に　$formUserID を登録
 	  $_SESSION['loginUser'] = $formName;
+	  $_SESSION['u_id'] = $userId;
 	  header("Location:test.php");
 	  }
 	}
@@ -80,7 +83,6 @@ if(!isset($_POST['login'])) {
 </html>
 <?php
 }
-
 //エラー表示関数
 function error($errorType) {
   
