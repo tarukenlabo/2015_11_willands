@@ -31,7 +31,7 @@ if(!isset($_POST['login'])) {
   while($data = mysql_fetch_array($result)) {
     if($data['U_NAME'] == $formName) {  //フォームから取得したUSERIDとデータベースのUSERIDが一致
       $dbPass = $data['U_PASS'];
-      $userId = $data['U_ID'];
+      $userId = $data['U_ID'];//userIdを取得
       break;
     }
   }
