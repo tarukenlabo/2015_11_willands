@@ -52,7 +52,8 @@ if(!isset($_POST['login'])) {
 	  //セッション変数を作成→セッション変数に　$formUserID を登録
 	  $_SESSION['loginUser'] = $formName;
 	  $_SESSION['u_id'] = $userId;
-	  header("Location:test.php");
+	  //header("Location:test.php");
+	  header("Location:trip_flame.php");
 	  }
 	}
   }
