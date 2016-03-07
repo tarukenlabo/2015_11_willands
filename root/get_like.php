@@ -1,5 +1,5 @@
 <?php
-	require_once("./dbh_yoneda.php");
+	require_once("./db_connect.php");
 	
 	function get_like($p_id){
 		$db = new cls_db();
