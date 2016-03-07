@@ -1,4 +1,4 @@
-<!--チェックイン画面 -->
+﻿<!--チェックイン画面 -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,7 +10,6 @@
 	<body>
 		<h1>チェックイン</h1>
 		<form method="POST" action="checkin_upload.php" enctype="multipart/form-data">
-		<p>現在日時：</p><?php echo date("Y/m/d (D) H:i:s",time()) ?>
 		<p>位置：</p>
 		<p><input type="button" value="写真選択" onclick=""></p>
 		<p>コメント：<textarea name="comment"></textarea></p>
