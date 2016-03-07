@@ -17,7 +17,7 @@ window.onload = function showMap () {
 			uLat = position.coords.latitude;
 			uLng = position.coords.longitude;
 			showLatLng ( uLat, uLng );
-			postLatLng ( uLat, uLng );
+			//postLatLng ( uLat, uLng );
 			// class="map"に位置情報を反映した地図を表示
 			map = new GMaps({
 				div: '.map',
@@ -69,10 +69,10 @@ function showLatLng ( lat, lng ) {
 	document.getElementById("show_lat").innerHTML = lat;
 	document.getElementById("show_lng").innerHTML = lng;
 }
-function postLatLng ( lat, lng ) {
+/*function postLatLng ( lat, lng ) {
 	$("input").val("userLatitude") = lat;
 	$("input").val("userLongitude") = lng;
-}
+}*/
 </script>
 <style>
 	.map {
