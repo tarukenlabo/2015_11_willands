@@ -72,7 +72,7 @@
 					</div>
 
 					<div>
-					<a href=<?php echo "./check_in.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
+					<a href=<?php echo "./check-in.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
 					<p>ポイントチェック</p>
 					</a>
 
