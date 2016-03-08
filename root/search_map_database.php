@@ -59,22 +59,14 @@
 			$pref_id = $post['ID'];
 		}
 		echo $pref_id;
-		$sql_pref_insert = "INSERT INTO post_check_in(M_ID) VALUES($pref_id)";
-		$stmt = $dbh->prepare($sql_pref_insert);
-		$stmt->execute();
-		
 	}else{
 		$sql = "SELECT ID FROM map_master WHERE LOCATION = ".$country;
-		$sql = "SELECT ID FROM map_master WHERE LOCATION = 'India'";
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute();
 		
 		foreach($stmt as $post){
-			$country_id = $post['ID'];
+			$pref_id = $post['ID'];
 		}
 		
-		echo $country_id;
 		$sql_country_insert = "INSERT INTO post_check_in(M_ID) VALUES($country_id)";
-		$stmt = $dbh->prepare($sql_country_insert);
-		$stmt->execute();
 	}

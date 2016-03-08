@@ -103,6 +103,7 @@ function setGio( lat,lng){
 	</p>
 
 	<form action="./checkin_upload.php" method="POST" enctype="multipart/form-data">
+		<p>タイトル<input type="text" name="uTitle"></p>
 		<p><input type="file" name="uPhoto" value="写真選択"></p>
 		<p>コメント：<textarea name="uComment"></textarea></p>
 		<div>
