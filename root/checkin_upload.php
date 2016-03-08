@@ -3,8 +3,8 @@
 	require "ErrorHandling.php";
 	require "ImageObj.php";
 	
-	$user_id = 1;
-	$post_id = 2;
+	$user_id = $_GET["u_id"];
+	$post_id = $_GET["p_id"];
 	
 	$error = new ErrorHandling;
 	$image_obj = new ImageObj;
