@@ -4,6 +4,8 @@
 	require_once("./user.php");
 	require_once("./post.php");
 
+	date_default_timezone_set('Asia/Tokyo')
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -36,7 +38,7 @@
 
 			<h3><?php echo $u_info['U_NAME'] ; ?>さんの旅行一覧</h3>
 
-			<a href=<?php echo "./trip-flame.php?u_id=" . $u_info['U_ID']; ?>>
+			<a href=<?php echo "./trip_flame.php?u_id=" . $u_info['U_ID']; ?>>
 			<p>新しい旅行記を作成</p>
 			</a>
 
@@ -70,7 +72,7 @@
 					</div>
 
 					<div>
-					<a href=<?php echo "./check_in.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
+					<a href=<?php echo "./check-in.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
 					<p>ポイントチェック</p>
 					</a>
 
