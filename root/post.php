@@ -63,6 +63,22 @@
 		
 	}
 
+	//記事一覧検索：ユーザーID指定
+	function search_u_id($u_id){
+
+		$db = new cls_db();
+		$dbh = $db->db_connect();
+
+		$dbh->query('SET NAMES utf8');
+		
+		$select = "SELECT * FROM post WHERE U_ID=" . $u_id;
+		
+		$stmt = $dbh->prepare($select);
+		$stmt->execute();
+		
+		return $stmt;
+	}
+
 
 	//記事検索：ランダムで1件取得
 	function search_randum(){
