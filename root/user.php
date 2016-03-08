@@ -53,7 +53,6 @@
 					. "LEFT JOIN u_info AS ui "
 					. "ON (ua.U_ID = ui.U_ID) "
 					. "WHERE ua.U_ID=" . $u_id;
-		echo $select;
 
 		$stmt = $dbh->prepare($select);
 		$stmt->execute();
