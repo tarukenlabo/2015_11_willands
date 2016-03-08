@@ -122,8 +122,6 @@
 		$stmt = $dbh->prepare($select);
 		$stmt->execute();
 
-		var_dump($stmt);
-
 		return $stmt;
 		
 	}

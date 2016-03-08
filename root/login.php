@@ -53,7 +53,7 @@ if(!isset($_POST['login'])) {
 	  $_SESSION['loginUser'] = $formName;
 	  $_SESSION['u_id'] = $userId;
 	  //header("Location:test.php");
-	  header("Location:trip_flame.php");
+	  header("Location:member_page.php");
 	  }
 	}
   }

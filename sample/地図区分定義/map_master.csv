@@ -1,5 +1,4 @@
-country_id,country
-1,Islamic Republic of Afghanistan
+Ôªø1,Islamic Republic of Afghanistan
 1,Republic of Armenia
 1,Republic of Azerbaijan
 1,Kingdom of Bahrain
@@ -18,7 +17,7 @@ country_id,country
 1,Japan
 1,Hashemite Kingdom of Jordan
 1,Republic of Kazakhstan
-1,ÅiNorth KoreaÅÅDemocratic People's Republic of Korea)
+1,ÔºàNorth KoreaÔºùDemocratic People's Republic of Korea)
 1,Republic of Korea
 1,State of Kuwait
 1,Kyrgyz Republic
@@ -46,6 +45,11 @@ country_id,country
 1,Republic of Uzbekistan
 1,Socialist Republic of Viet Nam /Socialist Republic of Vietnam
 1,Republic of Yemen
+1,Hong Kong Special Administrative Region
+1,Macau
+1,Kashmir
+1,Taiwan
+1,The west Bank and Gaza Strip
 2,Commonwealth of Australia
 2,Republic of the Fiji Islands
 2,Republic of Kiribati
@@ -60,6 +64,22 @@ country_id,country
 2,Kingdom of Tonga
 2,Tuvalu
 2,Republic of Vanuatu
+2,American Samoa
+2,Christmas Island
+2,Cocos (Keeling) Islands
+2,Cook Islands
+2,French Polynesia
+2,Guam
+2,Johnston Island
+2,Midway Islands
+2,New Caledonia
+2,Niue
+2,Norfolk Island
+2,Northern Mariana Islands
+2,Pitcairn
+2,Tokelau
+2,Wake Island
+2,Wallis and Futuna Islands
 3,People's Democratic Republic of Algeria
 3,Republic of Angola
 3,Republic of Benin
@@ -80,7 +100,7 @@ country_id,country
 3,State of Eritrea
 3,Federal Democratic Republic of Ethiopia
 3,Gabonese Republic
-3,Republic of Çîhe Gambia
+3,Republic of ÔΩîhe Gambia
 3,Republic of Ghana
 3,Republic of Guinea
 3,Republic of Guinea-Bissau
@@ -114,6 +134,11 @@ country_id,country
 3,Republic of Uganda
 3,Republic of Zambia
 3,Republic of Zimbabwe
+3,British Indian Territory
+3,Mayotte
+3,Reunion
+3,St. Helena ex dep.
+3,Western Sahara
 4,Republic of Albania
 4,Principality of Andorra
 4,Republic of Austria
@@ -159,6 +184,11 @@ country_id,country
 4,
 4,State of the City of Vatican
 4,Former Yugoslav Republic of Macedonia
+4,Channel Islands
+4,Faeroe Islands
+4,Gibraltar
+4,Isle of Man
+4,Svalbard and Jan Mayen Island
 5,Antigua and Barbuda
 5,Commonwealth of The Bahamas
 5,Barbados
@@ -182,6 +212,21 @@ country_id,country
 5,Saint Vincent and the Grenadines
 5,Republic of Trinidad and Tobago
 5,United States of America
+5,Anguilla
+5,Aruba
+5,Bermuda
+5,British Virgin Islands
+5,Cayman Islands
+5,Curacao
+5,Greenland
+5,Guadeloupe
+5,Martinique
+5,Montserrat
+5,Puerto Rico
+5,Sint Maarten
+5,St. Pierre and Miquelon
+5,Turks and Caicos Islands
+5,Virgin
 6,Argentine Republic
 6,Republic of Bolivia
 6,Federative Republic of Brazil
@@ -194,52 +239,52 @@ country_id,country
 6,Republic of Suriname
 6,Oriental Republic of Uruguay
 6,Bolivarian Republic of Venezuela
-7,Hong Kong Special Administrative Region
-7,Macau
-7,Kashmir
-7,Taiwan
-7,The west Bank and Gaza Strip
-8,American Samoa
-8,Christmas Island
-8,Cocos (Keeling) Islands
-8,Cook Islands
-8,French Polynesia
-8,Guam
-8,Johnston Island
-8,Midway Islands
-8,New Caledonia
-8,Niue
-8,Norfolk Island
-8,Northern Mariana Islands
-8,Pitcairn
-8,Tokelau
-8,Wake Island
-8,Wallis and Futuna Islands
-9,British Indian Territory
-9,Mayotte
-9,Reunion
-9,St. Helena ex dep.
-9,Western Sahara
-10,Channel Islands
-10,Faeroe Islands
-10,Gibraltar
-10,Isle of Man
-10,Svalbard and Jan Mayen Island
-11,Anguilla
-11,Aruba
-11,Bermuda
-11,British Virgin Islands
-11,Cayman Islands
-11,Curacao
-11,Greenland
-11,Guadeloupe
-11,Martinique
-11,Montserrat
-11,Puerto Rico
-11,Sint Maarten
-11,St. Pierre and Miquelon
-11,Turks and Caicos Islands
-12,Virgin
-13,Falkland Islands (Malvinas)
-13,French Guiana
-14,
+6,Falkland Islands (Malvinas)
+6,French Guiana
+7, Hokkaido Prefecture
+8, Aomori Prefecture
+9, Iwate Prefecture
+10, Miyagi Prefecture
+11, Akita Prefecture
+12, Yamagata Prefecture
+13, Hukushima Prefecture
+14, Ibaraki Prefecture
+15, Tochigi Prefecture
+16, Gunma Prefecture
+17, Saitamaken
+18, Chiba Prefecture
+19, T?ky?to
+20, Kanagawa Prefecture
+21, Niigata Prefecture
+22, Toyama Prefecture
+23, Ishikawa Prefecture
+24, Fukui Prefecture
+25, Yamanashiken
+26, Nagano Prefecture
+27, Gifu Prefecture
+28, Shizuoka Prefecture
+29, Aichi Prefecture
+30, Mie Prefecture
+31, Shiga Prefecture
+32, Kyoto Prefecture
+33, ?sakafu
+34, Hy?goken
+35, Nara Prefecture
+36, Wakayama Prefecture
+37, Tottori Prefecture
+38, Shimane Prefecture
+39, Okayama Prefecture
+40, Hiroshima Prefecture
+41, Yamaguchi Prefecture
+42, Tokushima Prefecture
+43, Kagawaken
+44, Ehime Prefecture
+45, Kochi Prefecture
+46, Fukuokaken
+47, Saga Prefecture
+48, Nagasaki Prefecture
+49, Kumamoto Prefecture
+50, Oita Prefecture
+51, Miyazaki Prefecture
+52, Kagoshima Prefecture
+53, Okinawa Prefecture

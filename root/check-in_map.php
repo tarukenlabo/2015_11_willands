@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
@@ -46,9 +46,11 @@ window.onload = function showMap () {
 					    title: '現在地'
 					  }); // 新たなマーカーを表示
 					  showLatLng (e.latLng.lat(), e.latLng.lng()); // 新たな緯度･経度を表示
+					  setGio(e.latLng.lat(), e.latLng.lng()); //Formに値セット
 					}
 				}]
 			});
+			setGio(uLat, uLng); //Formに値セット
 		},
 		// GeoLocationAPIで位置情報の取得に失敗した場合
 		error: function(error) {
@@ -63,6 +65,7 @@ window.onload = function showMap () {
 		  alert("現在地を表示します");
 		}
 	});
+		
 }
 // 引数をもとに緯度・経度の値を表示
 function showLatLng ( lat, lng ) {
@@ -73,6 +76,13 @@ function showLatLng ( lat, lng ) {
 	$("input").val("userLatitude") = lat;
 	$("input").val("userLongitude") = lng;
 }*/
+
+//Formに情報セット
+function setGio( lat,lng){
+	$('#userLatitude').val( lat );
+	$('#userLongitude').val( lng );
+}
+
 </script>
 <style>
 	.map {
@@ -92,11 +102,15 @@ function showLatLng ( lat, lng ) {
 		</table>
 	</p>
 
-<form action="" method="post">
-	<input type="hidden" name="uLat" id="userLatitude" val="">
-	<input type="hidden" name="uLng" id="userLongitude" val="">
-	<input type="submit" name="submit" val="送信する">
-</form>
-
+	<form action="./checkin_upload.php" method="POST" enctype="multipart/form-data">
+		<p>タイトル<input type="text" name="uTitle"></p>
+		<p><input type="file" name="uPhoto" value="写真選択"></p>
+		<p>コメント：<textarea name="uComment"></textarea></p>
+		<div>
+			<input type="hidden" name="uLat" id="userLatitude">
+			<input type="hidden" name="uLng" id="userLongitude">
+			<input type="submit" id="sender" val="送信する">
+		</div>
+	</form>
 </body>
 </html>
