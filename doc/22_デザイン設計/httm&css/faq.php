@@ -38,9 +38,7 @@
 				</div>
 			</article>
 			
-			<footer>
-				<p>(★フッターです)</p>
-			</footer>
+			<?php require 'footer.php' ; ?>
 		</div><!--#wrap-->
 	</body>	
 </html>
