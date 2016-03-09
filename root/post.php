@@ -42,6 +42,8 @@
 	function search_keyword($keyword){
 
 		if ($keyword <> ""){
+			//キーワードの分割			
+			$words = explode(" ", str_replace("　"," ",$keyword));
 			$db = new cls_db();
 			$dbh = $db->db_connect();
 
@@ -51,10 +53,24 @@
 			$select = "SELECT * FROM post AS pst "
 						. "LEFT JOIN post_check_in AS chk "
 						. "ON (pst.P_ID = chk.P_ID) "
-						. "WHERE P_TITLE LIKE '%" . $keyword . "%' "
-						. " OR P_AWORD LIKE '%" . $keyword . "%' "
-						. " OR C_COMMENT LIKE '%" . $keyword . "%' ";
-			
+						. "WHERE ";
+
+			$title = "";
+			$aword = "";
+			$comment = "";
+			foreach($words as $word) {
+				if ($title ===""){
+				} else {
+					$title = $title . " AND ";
+					$aword = $aword . " AND ";
+					$comment = $comment . " AND ";
+				}			
+				$title = $title . "P_TITLE LIKE '%" . $word . "%' ";
+				$aword = $aword . "P_AWORD LIKE '%" . $word . "%' ";
+				$comment = $comment . "C_COMMENT LIKE '%" . $word . "%' ";
+			}
+			$select = $select . $title . " OR ". $aword . " OR ".  $comment;
+
 			$stmt = $dbh->prepare($select);
 			$stmt->execute();
 		}
