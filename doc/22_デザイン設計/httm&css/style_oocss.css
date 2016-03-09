@@ -79,10 +79,12 @@ footer{
 
 /*----common----*/
 
-.clearFix{
+.clearFix:after{
 	clear:both;
 	content:".";
 	display:block;
+	height : 0;
+	visibility : hidden;
 }
 
 
@@ -106,9 +108,16 @@ footer{
 */
 
 .button{
-	width : ;
-	height: ;
+	width :80px;
+	height:30px;
+	border-radius : 5px;
 
+}
+
+.check-in{
+	width:140px;
+	height :165px;
+	margin : 5px;
 }
 
 /*
@@ -127,27 +136,44 @@ footer{
 	padding : 10px;
 }
 
-.text-box-1line{
+
+.box-line1{
+	width:260px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+.box-line4{
 	width:;
 	height:;
 	border-radius:5px;
 	box-sizing : border-box;
 }
 
-.text-box-5line{
-	width:;
-	height:;
+.large-photo{
+	width:200px;
+	height:200px;
+	margin : 30px;
 	border-radius:5px;
 	box-sizing : border-box;
 }
 
-.photo{
-	width:;
-	height:;
-	border-radius:5px;
+.trip-frame-box{
+	width : 700px;
+	margin : 5px 5px 5px 25px;
+	border : 1px solid #222;
+	border-radius:3px;
 	box-sizing : border-box;
 }
 
+.trip-frame-photo{
+	width : 150px;
+	height : 150px;
+	margin : 5px;
+	border :1px solid #222;
+}
 /*
 配置
 */
@@ -159,10 +185,28 @@ footer{
 	float : right;
 }
 
-.align_center{
+.align-center{
 	margin : 0 auto;
 }
 
+.align-r{
+	text-align : right;
+}
+.align-c{
+	text-align : center;
+}
+
+.margin30{
+	margin : 30px;
+}
+
+.margin10{
+	margin : 10px;
+}
+
+.link-extend{
+	display : block;
+}
 
 /*----Skin-----*/
 
@@ -170,10 +214,17 @@ footer{
 文字の色とサイズ
 */
 
-.clear_text{
+.clear-text{
 	text-decoration : none;
 	list-style : none;
+	color : #222;
+	display : block;
 }
+
+.bold{
+	font-weight : bold;
+}
+
 /*ページタイトル*/
 .contents-title{
 	margin-left : 30px;
@@ -181,9 +232,16 @@ footer{
 	font-size :1.8em;
 	color :#222;
 }
+.my-page{
+	margin : 30px;
+	font-size :2.3em;
+	color :#222;
+	border-bottom:2px solid #222;
+}
 
 /*記事のタイトル*/
 .article-title{
+	margin : 30px;
 	font-size :1.5em;
 	color :#222;
 }
@@ -207,6 +265,12 @@ footer{
 	color :#222;
 	line-height : 1.5em;
 }
+.other-title{
+	margin : 0;
+	font-size :2em;
+	color :#222;
+	line-height : 1.3em;
+}
 
 /*
 背景色
@@ -221,6 +285,10 @@ footer{
 
 .white{
 	background-color : white;
+}
+
+.hadairo{
+	background : wheat;
 }
 
 .shadow{
