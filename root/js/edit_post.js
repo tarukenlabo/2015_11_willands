@@ -74,6 +74,11 @@ $(function(){
 		
 	});
 	
-	
+	/*
+	var h = Math.max.apply( null, [document.body.clientHeight , document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight] );
+	var result = h - 500 ;
+	$('#post_edit_btn').css({'position':'absolute','bottom':result + 'px'});
+	*/
+
 
 });
