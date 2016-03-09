@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+wrap {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+nav ul li {
+display: inline;
+margin: 0 10px;
+}
