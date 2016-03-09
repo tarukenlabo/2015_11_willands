@@ -27,6 +27,5 @@
 				<p>(★フッターです)</p>
 			</footer>
 		</div><!--#wrap-->
-	</body>
-	
+	</body>	
 </html>
