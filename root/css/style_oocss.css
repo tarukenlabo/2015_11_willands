@@ -1,0 +1,165 @@
+@charset="UTF-8";
+
+body{
+
+}
+
+container{
+
+}
+
+header{
+
+}
+
+nav{
+
+}
+
+main{
+
+}
+
+footer{
+
+}
+
+
+/*----common----*/
+
+.clear_fix{
+	clear:both
+	content:".";
+	display:block;
+	line-height:0;
+}
+
+/*----Structure-----*/
+
+/*
+ロゴ
+*/
+
+.logo{
+	
+}
+
+/*
+ボタン
+*/
+
+.button{
+	width : ;
+	height: ;
+
+}
+
+/*
+箱、写真
+*/
+
+.box{
+
+}
+
+.text-box-1line{
+	width:;
+	height:;
+	border-radius:5px;
+}
+
+.text-box-5line{
+	width:;
+	height:;
+	border-radius:5px;
+}
+
+.photo{
+	width:;
+	height:;
+	border-radius:5px;
+}
+
+/*
+配置
+*/
+.l-float{
+	float : left;
+}
+
+.r-float{
+	float : right;
+}
+
+.align_center{
+	margin : 0 auto;
+}
+
+
+/*----Skin-----*/
+
+/*
+文字の色とサイズ
+*/
+
+//表示内容のタイトル
+.contents-title{
+	font-size :;
+	color : ;
+}
+
+//記事のタイトル
+.article-title{
+	font-size :;
+	color : ;
+}
+
+//個別記事のタイトル
+
+.sub-article-title{
+	font-size :;
+	color : ;
+}
+
+//個別記事のコメント
+.article-text{
+	font-size :;
+	color : ;
+}
+
+//その他のテキスト
+.other-text{
+	font-size :;
+	color : ;
+}
+
+/*
+背景色
+*/
+.orange{
+	background-color : ;
+}
+
+.gray{
+	background-color : ;
+}
+
+.shadow{
+	box-shadow : ;
+}
+
+
+
+/*スマホページ*/
+
+@media screen and (max-width: 480px){
+
+
+
+
+
+
+
+
+}
+
