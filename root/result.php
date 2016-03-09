@@ -65,6 +65,9 @@
 		});
 		</script>
 
+		<div class="modal_content">
+		</div>
+
 		<?php echo "222";?>
 
 		</div>
