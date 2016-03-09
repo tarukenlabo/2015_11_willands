@@ -55,13 +55,8 @@
 	while($test = $posts_map->fetch(PDO::FETCH_ASSOC) ){
 		$args[] = $test;
 	}
-	/*
-	echo '<pre>';
-	var_dump($args);
-	echo '</pre>';
-	*/
+
 	
-	$json_string = json_encode($args);
 	
 	
 ?>
