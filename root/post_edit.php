@@ -29,6 +29,7 @@
 		$fday = $post['P_FDAY'];
 		$p_cate = $post['P_CAT'];
 		$o_flg = $post['P_OFLAG'];
+		$p_comment = $post['P_AWORD'];
 	}
 	
 	$get_u_info = "SELECT * FROM u_auth WHERE U_ID = '".$u_id."'";
@@ -57,6 +58,10 @@
 	<link rel="stylesheet" href="./css/post_style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="./js/edit_post.js"></script>
+	<script src="./js/edit_map.js"></script>
+	
+	
+
 </head>
 <body>
 	<div id="wrap">
@@ -69,6 +74,7 @@
 		<div class="post_detail">
 			<div class="post_img">
 				<img src="<?php echo $img_src; ?>">
+				
 			</div>
 			
 			<div class="post_detail2">
@@ -106,9 +112,16 @@
 						<td><input type="date" name="sday" value="<?php echo $sday; ?>">&nbsp～&nbsp<input type="date" name="fday" value="<?php echo $fday; ?>"></td>
 					</tr>
 					
+					<tr>
+						<th>記事全体コメント</th>
+						<td><textarea name="comment" cols="100" rows="10"><?php echo $p_comment; ?></textarea></td>
+					</tr>
+
+					
 				</table>
 			</div>
-		
+			<input id="post_edit_btn" type="submit" value="確認画面へ">
+		</form>
 			
 			<div id="checkins">
 				<?php foreach($posts as $checks):
@@ -134,8 +147,10 @@
 			</div>
 		</div>
 		
-		<input type="submit" value="確認画面へ">
-		</form>
+		
+	<div class="map" style="width:600px;height:600px;"></div>
+		
 	</div>
+	
 </body>
 </html>
