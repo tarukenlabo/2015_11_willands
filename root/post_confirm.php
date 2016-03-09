@@ -60,6 +60,11 @@
 				<th>日数</th>
 				<td><?php echo $_POST['sday']; ?>&nbsp～&nbsp<?php echo $_POST['fday']; ?></td>
 			</tr>
+			
+			<tr>
+				<th>記事全体コメント</th>
+				<td><?php echo $_POST['comment']; ?></td>
+			</tr>
 		</table>	
 			
 			
@@ -87,8 +92,8 @@
 
 
 		<button onClick="history.back()">戻る</button>
-		<button onClick="./">下書きを保存（非公開）</button>
-		<button onClick="./">公開</button>
+		<button onClick="location.href='./post_rough.php'">下書きを保存（非公開）</button>
+		<button onClick="location.href='./post_release.php'">公開</button>
 	</div>
 </body>
 </html>
