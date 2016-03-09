@@ -1,0 +1,41 @@
+.modal_wrap {
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100vh;
+	background-color:rgba(0,0,0,0.7);
+}
+
+.modal_box {
+	width:600px;
+	height:400px;
+	background-color:#fff;
+	margin:100px auto 0 auto;
+}
+
+.modal_box > p {
+	text-align:right;
+	font-size:2em;
+	cursor:pointer;
+}
+
+.modal_content {
+	text-align:left;
+	font-size:2em;
+}
+
+img {
+	width:100px;
+}
+
+#checkins {
+	position:relative;
+}
+
+#post_edit_btn {
+	position:absolute;
+	bottom:-10px;
+	left:100px;
+}
+
