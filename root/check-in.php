@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<title>GMaps.jsでGeoLocationAPIを利用</title>
+<meta charset="UTF-8">
+<title>GMaps.jsでGeoLocationAPIを利用</title>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="./js/gmaps.js"></script>
@@ -11,7 +11,7 @@ var map;
 var uLat;
 var uLng;
 window.onload = function showMap () {
-	GMaps.geolocate({
+GMaps.geolocate({
 		// GeoLocationAPIで位置情報の取得に成功した場合
 		success: function(position) {
 			uLat = position.coords.latitude;
@@ -35,7 +35,7 @@ window.onload = function showMap () {
 			map.setContextMenu({
 				control: 'map',
 				options: [{
-					title: '現在地を変更',
+				title: '現在地を変更',
 					name: 'current_position_here',
 					action: function(e) {
 					  this.removeMarkers(); // 既存のマーカーを消去
