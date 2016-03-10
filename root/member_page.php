@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$u_id = $_SESSION['u_id'];
 
 	require_once("./user.php");
 	require_once("./post.php");
@@ -38,7 +39,7 @@
 
 			<h3><?php echo $u_info['U_NAME'] ; ?>さんの旅行一覧</h3>
 
-			<a href=<?php echo "./trip_flame.php?u_id=" . $u_info['U_ID']; ?>>
+			<a href=<?php echo "./trip_flame.php?u_id=" . $u_id; ?>>
 			<p>新しい旅行記を作成</p>
 			</a>
 
