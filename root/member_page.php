@@ -64,7 +64,7 @@
 						</a>
 						<div>
 							<p><?php 
-								if ($post['P_OFLAG'] = 1){
+								if ($post['P_OFLAG'] == 0){
 									echo "公開";
 								} else {
 									echo "非公開";
