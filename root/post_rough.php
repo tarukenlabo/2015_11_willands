@@ -6,8 +6,10 @@
 	//セッション開始
 	session_start();
 	
+	$upload_file_path = $_SESSION['photo_path'];
 	
-	$p_id = 2;
+	
+	$p_id = $_GET['p_id'];
 	
 	//データベース設定
 	$db = new cls_db();
@@ -29,7 +31,7 @@
 	$comment = h($post_data["comment"]);
 	
 
-	$stmt = $dbh->prepare("UPDATE post SET P_CAT = :cate, P_TITLE = :title, P_AWORD = :comment, P_PEAPLE = :peaple, P_PRICE = :price, P_SDAY = :sday, P_FDAY = :fday, P_OFLAG = :flag WHERE P_ID = '".$p_id."'");
+	$stmt = $dbh->prepare("UPDATE post SET P_CAT = :cate, P_TITLE = :title, P_AWORD = :comment, P_PEAPLE = :peaple, P_PRICE = :price, P_SDAY = :sday, P_FDAY = :fday, P_OFLAG = :flag, P_EYE = :photo WHERE P_ID = '".$p_id."'");
 	$stmt->execute(array(
 		'cate'=>$cate,
 		'title'=>$title,
@@ -38,9 +40,16 @@
 		'price'=>$price,
 		'sday'=>$sday,
 		'fday'=>$fday,
-		'flag'=>1
+		'flag'=>1,
+		'photo'=>$upload_file_path
 	));
 	
+	/*
+	//post_photoへの登録
+	$insert_sql = "UPDATE post SET P_EYE = ".$upload_file_path."WHERE =)";
+	$stmt = $dbh->prepare($insert_sql);
+	$stmt->execute();*/
+
 	
 	//マイページへ
 	header("Location:member_page.php");

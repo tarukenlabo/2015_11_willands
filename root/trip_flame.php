@@ -30,6 +30,14 @@
 				<th>出発日</th>
 				<td><input type="date" name="start_date"></td>
 			</tr>
+			
+			<tr>
+				<th>公開／下書き</th>
+				<td>
+					<input type="radio" name="flag" value="0">公開
+					<input type="radio" name="flag" value="1">下書き
+				</td>
+			</tr>
 		</table>
 		<input type="submit" value="作成">
 	</form>

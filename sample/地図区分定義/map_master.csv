@@ -1,246 +1,421 @@
-﻿1,Islamic Republic of Afghanistan
-1,Republic of Armenia
-1,Republic of Azerbaijan
-1,Kingdom of Bahrain
-1,People's Republic of Bangladesh
-1,Kingdom of Bhutan
-1,Brunei Darussalam
-1,Kingdom of Cambodia
-1,People's Republic of China
-1,Republic of Cyprus
+﻿1, Islamic Republic of Afghanistan
+1, Afghanistan
+1, Republic of Armenia
+1, Armenia
+1, Republic of Azerbaijan
+1, Azerbaijan
+1, Kingdom of Bahrain
+1, Bahrain
+1, People's Republic of Bangladesh
+1, Bangladesh
+1, Kingdom of Bhutan
+1, Bhutan
+1, Brunei Darussalam
+1, Brunei
+1, Kingdom of Cambodia
+1, Cambodia
+1, People's Republic of China
+1, China
+1, Republic of Cyprus
+1,Cyprus
 1,Georgia
-1,India
-1,Republic of Indonesia
-1,Islamic Republic of Iran
-1,Republic of Iraq
-1,State of Israel
-1,Japan
-1,Hashemite Kingdom of Jordan
-1,Republic of Kazakhstan
-1,（North Korea＝Democratic People's Republic of Korea)
-1,Republic of Korea
-1,State of Kuwait
-1,Kyrgyz Republic
-1,Lao People's Democratic Republic
-1,Republic of Lebanon
-1,Malaysia
-1,Republic of Maldives
-1,Mongolia
-1,Union of Myanmar
-1,State of Nepal
-1,Sultanate of Oman
-1,Islamic Republic of Pakistan
-1,Republic of the Philippines
-1,State of Qatar
-1,Kingdom of Saudi Arabia
-1,Republic of Singapore
-1,Democratic Socialist Republic of Sri Lanka
-1,Syrian Arab Republic
-1,Republic of Tajikistan
-1,Kingdom of Thailand
-1,The Democratic Republic of Timor-Leste
-1,Republic of Turkey
+1, India
+1, Republic of Indonesia
+1, Indonesia
+1, Islamic Republic of Iran
+1,Iran
+1, Republic of Iraq
+1, Iraq
+1, State of Israel
+1, Israel
+1, Japan
+1, Hashemite Kingdom of Jordan
+1,Jordan
+1, Republic of Kazakhstan
+1, Kazakhstan
+1, （North Korea＝Democratic People's Republic of Korea)
+1, North Korea
+1, Republic of Korea
+1, South Korea
+1, State of Kuwait
+1,Kuwait
+1, Kyrgyz Republic
+1, Kyrgyzstan
+1, Lao People's Democratic Republic
+1,Laos
+1, Republic of Lebanon
+1, Lebanon
+1, Malaysia
+1, Republic of Maldives
+1, Maldives
+1, Mongolia
+1, Union of Myanmar
+1, Myanmar (Burma)
+1, State of Nepal
+1, Nepal
+1, Sultanate of Oman
+1,Oman
+1, Islamic Republic of Pakistan
+1, Pakistan
+1, Republic of the Philippines
+1, Philippines
+1, State of Qatar
+1, Qatar
+1, Kingdom of Saudi Arabia
+1,Makkah Province Saudi Arabia
+1, Republic of Singapore
+1,Singapore
+1, Democratic Socialist Republic of Sri Lanka
+1, Sri Lanka
+1, Syrian Arab Republic
+1, Syria
+1, Republic of Tajikistan
+1, Tajikistan
+1, Kingdom of Thailand
+1, Thailand
+1, The Democratic Republic of Timor-Leste
+1,Timor-Leste
+1, Republic of Turkey
+1, Turkey
 1,Turkmenistan
-1,United Arab Emirates
-1,Republic of Uzbekistan
-1,Socialist Republic of Viet Nam /Socialist Republic of Vietnam
-1,Republic of Yemen
-1,Hong Kong Special Administrative Region
-1,Macau
-1,Kashmir
-1,Taiwan
-1,The west Bank and Gaza Strip
-2,Commonwealth of Australia
-2,Republic of the Fiji Islands
-2,Republic of Kiribati
-2,Republic of the Marshall Islands
-2,Federated States of Micronesia
-2,Republic of Nauru
-2,New Zealand
-2,Republic of Palau
-2,Papua New Guinea
-2,Independent State of Samoa
-2,Solomon Islands
-2,Kingdom of Tonga
-2,Tuvalu
-2,Republic of Vanuatu
-2,American Samoa
-2,Christmas Island
-2,Cocos (Keeling) Islands
-2,Cook Islands
-2,French Polynesia
-2,Guam
-2,Johnston Island
-2,Midway Islands
-2,New Caledonia
-2,Niue
+1, United Arab Emirates
+1,Abu Dhabi - Abu Dhabi - United Arab Emirates
+1, Republic of Uzbekistan
+1, Uzbekistan
+1, Socialist Republic of Viet Nam /Socialist Republic of Vietnam
+1, Vietnam
+1, Republic of Yemen
+1,Yemen
+1, Commonwealth of Australia
+1, Australia
+1, Republic of the Fiji Islands
+1, Fiji
+1, Republic of Kiribati
+1, Kiribati
+1, Republic of the Marshall Islands
+1,Marshall Islands
+1,Federated States of Micronesia
+1, Kiribati
+1, Hong Kong Special Administrative Region
+1, Hong Kong
+1, Macau
+1, Kashmir
+1, Taiwan
+1,捷運台北101/世貿站(信義)
+1,Taiwan 731
+2, Republic of Nauru
+2, Nauru
+2, New Zealand
+2, Republic of Palau
+2, Palau
+2, Papua New Guinea
+2, Independent State of Samoa
+2, Samoa
+2, Solomon Islands
+2, Kingdom of Tonga
+2, Tonga
+2, Tuvalu
+2, Republic of Vanuatu
+2, Vanuatu
+2, People's Democratic Republic of Algeria
+2,Algeria
+2, Republic of Angola
+2, Angola
+2, Republic of Benin
+2, Benin
+2, Republic of Botswana
+2, Botswana
+2, Burkina Faso
+2, Republic of Burundi
+2, Burundi
+2, Republic of Cameroon
+2, Cameroon
+2, Republic of Cape Verde
+2,Cape Verde
+2,Central African Republic
+2, Republic of Chad
+2,Chad
+2, Union of Comoros
+2, Comoros
+2, Democratic Republic of Congo
+2, Democratic Republic of the Congo
+2, Republic of Congo
+2,Republic of the Congo
+2, Republic of Cote d'Ivoire
+2, Republic of Djibouti
+2,Djibouti
+2, Arab Republic of Egypt
+2, Egypt
+2, Republic of Equatorial Guinea
+2, Equatorial Guinea
+2, State of Eritrea
+2, Eritrea
+2, Federal Democratic Republic of Ethiopia
+2,Ethiopia
+2, Gabonese Republic
+2, Gabon
+2, Republic of ｔhe Gambia
+2, The Gambia
+2,Chad
+2, American Samoa
+2, Cook Islands
+2, French Polynesia
+2, Guam
+2, Midway Islands
+2,United States
+2, New Caledonia
+2, Niue
 2,Norfolk Island
-2,Northern Mariana Islands
-2,Pitcairn
-2,Tokelau
-2,Wake Island
-2,Wallis and Futuna Islands
-3,People's Democratic Republic of Algeria
-3,Republic of Angola
-3,Republic of Benin
-3,Republic of Botswana
-3,Burkina Faso
-3,Republic of Burundi
-3,Republic of Cameroon
-3,Republic of Cape Verde
-3,Central African Republic
-3,Republic of Chad
-3,Union of Comoros
-3,Democratic Republic of Congo
-3,Republic of Congo
-3,Republic of Cote d'Ivoire
-3,Republic of Djibouti
-3,Arab Republic of Egypt
-3,Republic of Equatorial Guinea
-3,State of Eritrea
-3,Federal Democratic Republic of Ethiopia
-3,Gabonese Republic
-3,Republic of ｔhe Gambia
-3,Republic of Ghana
-3,Republic of Guinea
-3,Republic of Guinea-Bissau
-3,Republic of Kenya
-3,Kingdom of Lesotho
-3,Republic of Liberia
-3,The Great Socialist People's Libyan Arab Jamahiriya
-3,Republic of Madagascar
-3,Republic of Malawi
-3,Republic of Mali
-3,Islamic Republic of Mauritania
-3,Republic of Mauritius
-3,Kingdom of Morocco
-3,Republic of Mozambique
-3,Republic of Namibia
-3,Republic of Niger
-3,Federal Republic of Nigeria
-3,Republic of Rwanda
-3,Democratic Republic of Sao Tome and Principe
-3,Republic of Senegal
-3,Republic of Seychelles
-3,Republic of Sierra Leone
-3,Somali Democratic Republic
-3,Republic of South Africa
-3,The Republic of the Sudan
-3,Republic of South Sudan
-3,Kingdom of Swaziland
-3,United Republic of Tanzania
-3,Republic of Togo
-3,Republic of Tunisia
-3,Republic of Uganda
-3,Republic of Zambia
-3,Republic of Zimbabwe
-3,British Indian Territory
-3,Mayotte
-3,Reunion
-3,St. Helena ex dep.
-3,Western Sahara
-4,Republic of Albania
-4,Principality of Andorra
-4,Republic of Austria
-4,Republic of Belarus
-4,Kingdom of Belgium
-4,Bosnia and Herzegovina
-4,Republic of Bulgaria
-4,Republic of Croatia
-4,Czech Republic
-4,Kingdom of Denmark
-4,Republic of Estonia
-4,Republic of Finland
-4,French Republic
-4,Federal Republic of Germany
-4,Hellenic Republic
-4,Republic of Hungary
-4,Republic of Iceland
-4,Ireland
-4,Republic of Italy
-4,Republic of Latvia
-4,Principality of Liechtenstein
-4,Republic of Lithuania
-4,Grand Duchy of Luxembourg
-4,Republic of Malta
-4,Republic of Moldova
-4,Principality of Monaco
-4,Republic of Montenegro
-4,Kingdom of the Netherlands
-4,Kingdom of Norway
-4,Republic of Poland
-4,Portuguese Republic
-4,Romania
-4,Russian Federation
-4,Republic of San Marino
-4,Republic of Serbia
-4,Slovak Republic
-4,Republic of Slovenia
-4,Spain
-4,Kingdom of Sweden
-4,Swiss Confederation
-4,Ukraine
-4,United Kingdom of Great Britain and Northern Ireland
-4,
-4,State of the City of Vatican
-4,Former Yugoslav Republic of Macedonia
-4,Channel Islands
-4,Faeroe Islands
-4,Gibraltar
-4,Isle of Man
-4,Svalbard and Jan Mayen Island
-5,Antigua and Barbuda
-5,Commonwealth of The Bahamas
-5,Barbados
+2, Northern Mariana Islands
+2, CNMI
+2, Tokelau
+2, Wallis and Futuna Islands
+2, Wallis and Futuna
+3, Republic of Ghana
+3, Ghana
+3, Republic of Guinea
+3,Guinea
+3, Republic of Guinea-Bissau
+3, Guinea-Bissau
+3, Republic of Kenya
+3, Kenya
+3, Kingdom of Lesotho
+3, Lesotho
+3, Republic of Liberia
+3, Liberia
+3, The Great Socialist People's Libyan Arab Jamahiriya
+3, Libya
+3, Republic of Madagascar
+3, Madagascar
+3, Republic of Malawi
+3, Malawi
+3, Republic of Mali
+3, Mali
+3, Islamic Republic of Mauritania
+3,Mauritania
+3, Republic of Mauritius
+3, Mauritius
+3, Kingdom of Morocco
+3, Morocco
+3, Republic of Mozambique
+3, Mozambique
+3, Republic of Namibia
+3,Namibia
+3, Republic of Niger
+3, Niger
+3, Federal Republic of Nigeria
+3, Nigeria
+3, Republic of Rwanda
+3, Rwanda
+3, Democratic Republic of Sao Tome and Principe
+3, Republic of Senegal
+3, Senegal
+3, Republic of Seychelles
+3, Seychelles
+3, Republic of Sierra Leone
+3, Sierra Leone
+3, Somali Democratic Republic
+3, Somalia
+3, Republic of South Africa
+3, South Africa
+3, The Republic of the Sudan
+3, Sudan
+3, Republic of South Sudan
+3, South Sudan
+3, Kingdom of Swaziland
+3, Swaziland
+3, United Republic of Tanzania
+3, Tanzania
+3, Republic of Togo
+3,Togo
+3, Republic of Tunisia
+3, Tunisia
+3, Republic of Uganda
+3, Uganda
+3, Republic of Zambia
+3, Zambia
+3, Republic of Zimbabwe
+3,Zimbabwe
+3, British Indian Territory
+3,British Indian Ocean Territory
+3, Mayotte
+3, Reunion
+3, St. Helena ex dep.
+3, Saint Helena
+3, Western Sahara
+4, Republic of Albania
+4, Albania
+4, Principality of Andorra
+4, Andorra
+4, Republic of Austria
+4, Austria
+4, Republic of Belarus
+4, Belarus
+4, Kingdom of Belgium
+4, Belgium
+4, Bosnia and Herzegovina
+4, Republic of Bulgaria
+4, Bulgaria
+4, Republic of Croatia
+4, Croatia
+4, Czech Republic
+4, Kingdom of Denmark
+4, Denmark
+4, Republic of Estonia
+4, Estonia
+4, Republic of Finland
+4, Finland
+4, French Republic
+4, France
+4, Federal Republic of Germany
+4, Germany
+4, Hellenic Republic
+4, Greece
+4, Republic of Hungary
+4, 5000 Hungary
+4, Republic of Iceland
+4,Iceland
+4, Ireland
+4, Republic of Italy
+4, Italy
+4, Republic of Latvia
+4, Latvia
+4, Principality of Liechtenstein
+4, Liechtenstein
+4, Republic of Lithuania
+4, Lithuania
+4, Grand Duchy of Luxembourg
+4, Luxembourg
+4, Republic of Malta
+4,Malta
+4, Republic of Moldova
+4,Moldova
+4, Principality of Monaco
+4, Monaco
+4, Republic of Montenegro
+4, Montenegro
+4, Kingdom of the Netherlands
+4, Netherlands
+4, Kingdom of Norway
+4, Norway
+4, Republic of Poland
+4, Poland
+4, Portuguese Republic
+4, Portugal
+4, Romania
+4, Russian Federation
+4, Russia
+4, Republic of San Marino
+4, San Marino
+4, Republic of Serbia
+4, Serbia
+4, Slovak Republic
+4, Slovakia
+4, Republic of Slovenia
+4, Slovenia
+4, Spain
+4, Kingdom of Sweden
+4, Sweden
+4, Swiss Confederation
+4, Switzerland
+4, Ukraine
+4, United Kingdom of Great Britain and Northern Ireland
+4, UK
+4, State of the City of Vatican
+4,Vatican City
+4, Former Yugoslav Republic of Macedonia
+4,Macedonia (FYROM)
+4, Channel Islands
+4, Guernsey
+4, Faeroe Islands
+4, Faroe Islands
+4, Gibraltar
+4, Isle of Man
+4, Svalbard and Jan Mayen Island
+4, Svalbard and Jan Mayen
+5, Antigua and Barbuda
+5, Commonwealth of The Bahamas
+5,The Bahamas
+5, Barbados
 5,Belize
-5,Canada
-5,Republic of Costa Rica
-5,Republic of Cuba
-5,Commonwealth of Dominica
-5,Dominican Republic
-5,Republic of El Salvador
-5,Grenada
-5,Republic of Guatemala
-5,Republic of Haiti
-5,Republic of Honduras
-5,Jamaica
-5,United Mexican States
-5,Republic of Nicaragua
-5,Republic of Panama
-5,Saint Christopher and Nevis
-5,Saint Lucia
-5,Saint Vincent and the Grenadines
-5,Republic of Trinidad and Tobago
-5,United States of America
-5,Anguilla
-5,Aruba
+5, Canada
+5, Republic of Costa Rica
+5, Costa Rica
+5, Republic of Cuba
+5, Cuba
+5, Commonwealth of Dominica
+5, Dominica
+5, Dominican Republic
+5, Republic of El Salvador
+5, El Salvador
+5, Grenada
+5, Republic of Guatemala
+5, Guatemala
+5, Republic of Haiti
+5, Haiti
+5, Republic of Honduras
+5, Honduras
+5, Jamaica
+5, United Mexican States
+5, Mexico
+5, Republic of Nicaragua
+5, Nicaragua
+5, Republic of Panama
+5, Panama
+5, Saint Christopher and Nevis
+5,Saint Kitts and Nevis
+5,Chad
+5, Saint Lucia
+5, Saint Vincent and the Grenadines
+5, Republic of Trinidad and Tobago
+5, Trinidad and Tobago
+5, United States of America
+5, USA
+5, Anguilla
+5, Aruba
 5,Bermuda
-5,British Virgin Islands
-5,Cayman Islands
-5,Curacao
-5,Greenland
-5,Guadeloupe
-5,Martinique
-5,Montserrat
-5,Puerto Rico
-5,Sint Maarten
-5,St. Pierre and Miquelon
-5,Turks and Caicos Islands
-5,Virgin
-6,Argentine Republic
-6,Republic of Bolivia
-6,Federative Republic of Brazil
-6,Republic of Chile
-6,Republic of Colombia
-6,Republic of Ecuador
-6,Co-operative Republic of Guyana
-6,Republic of Paraguay
-6,Republic of Peru
-6,Republic of Suriname
-6,Oriental Republic of Uruguay
-6,Bolivarian Republic of Venezuela
-6,Falkland Islands (Malvinas)
-6,French Guiana
+5, British Virgin Islands
+5, Cayman Islands
+5, Curacao
+5, Greenland
+5, Guadeloupe
+5, Martinique
+5, Montserrat
+5, Puerto Rico
+5, Sint Maarten
+5, St. Pierre and Miquelon
+5,Saint Pierre and Miquelon
+5, Turks and Caicos Islands
+5, Virgin
+5, USVI
+6, Argentine Republic
+6, Argentina
+6, Republic of Bolivia
+6, Bolivia
+6, Federative Republic of Brazil
+6, Brazil
+6, Republic of Chile
+6, Chile
+6, Republic of Colombia
+6, Colombia
+6, Republic of Ecuador
+6, Ecuador
+6, Co-operative Republic of Guyana
+6, Guyana
+6, Republic of Paraguay
+6, Paraguay
+6, Republic of Peru
+6, Peru
+6, Republic of Suriname
+6, Suriname
+6, Oriental Republic of Uruguay
+6, Uruguay
+6, Bolivarian Republic of Venezuela
+6,Bolivia
+6,Venezuela
+6, Falkland Islands (Malvinas)
+6, Falkland Islands (Islas Malvinas)
+6, French Guiana
 7, Hokkaido Prefecture
 8, Aomori Prefecture
 9, Iwate Prefecture

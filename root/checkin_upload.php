@@ -3,8 +3,11 @@
 	require "ErrorHandling.php";
 	require "ImageObj.php";
 	
-	$user_id = $_GET["u_id"];
+	session_start();
+	
+	$user_id = $_SESSION["u_id"];
 	$post_id = $_GET["p_id"];
+	
 	
 	$error = new ErrorHandling;
 	$image_obj = new ImageObj;
@@ -63,14 +66,18 @@
 		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION ='".$pref."'";
 		
 	}else{
-		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION = ".$country;
+		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION = '".$country."'";
 	}
+	
+	echo $map_id_sql;
 	
 	$stmt = $dbh -> prepare( $map_id_sql );
 	$stmt -> execute();
 	
 	$map_id = $stmt -> fetch(PDO::FETCH_ASSOC);
-	var_dump( $map_id );
+	if( !$map_id ){
+		$map_id["ID"] = 0;
+	}
 	
 	//post_check_inへの登録
 	$insert_sql = "INSERT INTO post_check_in(P_ID,U_ID,C_TITLE,C_POSIX,C_POSIY,C_DATE,C_COMMENT,M_ID) VALUES( ".$post_id.",".$user_id.",'".$_POST["uTitle"]."',".$_POST["uLat"].",".$_POST["uLng"].",now(),'".$_POST["uComment"]."',".$map_id["ID"]." )";
@@ -85,12 +92,14 @@
 	$stmt = $dbh->prepare($select_sql);
 	$stmt->execute();
 	
+	echo $select_sql;
 	//チェックインIDの配列作成
 	while( $result = $stmt -> fetch( PDO::FETCH_NUM ) ){
 		foreach( $result as $val ){
 			$C_ID_array[] = $val;
 		}
 	}
+	
 	
 	//チェックインIDの最大値取得
 	$key_max = max( array_keys($C_ID_array) );
