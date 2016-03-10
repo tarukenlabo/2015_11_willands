@@ -6,7 +6,7 @@
 	session_start();
 	
 	
-	$p_id = 2;
+	$p_id = $_GET['p_id'];
 	
 	//データベース設定
 	$db = new cls_db();
