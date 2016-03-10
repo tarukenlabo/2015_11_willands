@@ -5,11 +5,20 @@
 	
 	$dbh -> query( "SET NAMES utf8" );
 	
-	$sql = "SELECT * FROM post";
-	$stmt = $dbh -> prepare( $sql );
-	$stmt -> execute();
+	//ピックアップ
+	$pu_select_sql = "SELECT P_ID,P_TITLE,P_AWORD,P_EYE FROM post WHERE P_ID = (SELECT P_ID FROM bookmark GROUP BY P_ID HAVING COUNT(P_ID) = (SELECT MAX(cnt) FROM ( SELECT P_ID,COUNT( * ) AS cnt FROM bookmark GROUP BY P_ID ) AS cnt_tb))";
+	$pu_stmt = $dbh -> prepare( $pu_select_sql );
+	$pu_stmt -> execute();
+	//ピックアップ写真
+	$pup_select_sql = "SELECT C_PHOTO FROM post_photo WHERE P_ID = (SELECT P_ID FROM bookmark GROUP BY P_ID HAVING COUNT(P_ID) = (SELECT MAX(cnt) FROM ( SELECT P_ID,COUNT( * ) AS cnt FROM bookmark GROUP BY P_ID ) AS cnt_tb)) ORDER BY RAND() LIMIT 4";
+	$pup_stmt = $dbh -> prepare( $pup_select_sql );
+	$pup_stmt -> execute();
 	
-	var_dump( $stmt );
+	//最新投稿
+	$np_select_sql = "SELECT post.P_ID,post.P_TITLE,post.P_EYE,cnt_tb.cnt FROM post LEFT JOIN ( SELECT P_ID, COUNT( P_ID ) AS cnt FROM bookmark GROUP BY P_ID) AS cnt_tb ON post.P_ID = cnt_tb.P_ID ORDER BY post.P_ID DESC";
+	$np_stmt = $dbh -> prepare( $np_select_sql );
+	$np_stmt -> execute();
+	
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -66,11 +75,39 @@
 			</nav>
 			
 			<article>
+<<<<<<< HEAD
+				<!-- ピックアップ本文 -->
+				<?php while( $result = $pu_stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
+				<h2><?php echo $result["P_TITLE"]; ?></h2>
+				<p><?php echo $result["P_AWORD"]; ?></p>
+				<p><img src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真"><?php echo $result["P_EYE"] ?></p>
+				<p><a href="./article.php?P_ID=<?php echo $result["P_ID"] ?>">アーティクルページへ</a></p>
+				<?php endwhile; ?>
+				
+				<!-- ピックアップ写真 -->
+				<?php while( $result = $pup_stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
+				<p><img src="<?php echo $result["C_PHOTO"] ?>" alt="ピックアップ写真"><?php echo $result["C_PHOTO"] ?></p>
+				<?php endwhile; ?>
+			</article>
+			
+			<article>
+				<!-- 最新投稿 -->
+				<?php while( $result = $np_stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
+				<h2><?php echo $result["P_TITLE"]; ?></h2>
+				<p>ブックマークカウント<?php echo $result["cnt"] ?></p>
+				<p><img src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真"><?php echo $result["P_EYE"] ?></p>
+				<p><a href="./article.php?P_ID=<?php echo $result["P_ID"] ?>">アーティクルページへ</a></p>
+				<?php endwhile; ?>
+=======
 				<p>(★メインコンテンツです)</p>
 				<div class="">
 					
 					
 				</div>
+<<<<<<< HEAD
+>>>>>>> c485497676182962970fe24f7a68e6ac45f261db
+=======
+>>>>>>> 209bf335e714084519f27ebfbcf98c5767064b1a
 			</article>
 			
 			<footer class="l-float">
