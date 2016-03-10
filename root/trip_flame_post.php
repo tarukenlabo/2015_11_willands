@@ -2,27 +2,30 @@
 	require_once("./db_connect.php");
 	require_once("./functions.php");
 	
-	//ƒZƒbƒVƒ‡ƒ“ŠJŽn
+	//ã‚»ãƒƒã‚·ãƒ§ãƒ³é–‹å§‹
 	session_start();
 	
-	//ƒf[ƒ^ƒx[ƒX‚É“o˜^‚·‚é‚à‚Ì‚ðƒTƒjƒ^ƒCƒWƒ“ƒO••Ï”‚ÉŠi”[
+	//ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ç™»éŒ²ã™ã‚‹ã‚‚ã®ã‚’ã‚µãƒ‹ã‚¿ã‚¤ã‚¸ãƒ³ã‚°ï¼†å¤‰æ•°ã«æ ¼ç´
 	$u_id = h($_SESSION['u_id']);
 	$cate =h($_POST["cate"]);
 	$title = h($_POST["o_title"]);
 	$sday = h($_POST["start_date"]);
+	$flag = h($_POST['flag']);
 	
 	
 	$db = new cls_db();
 	$dbh = $db->db_connect();
 	$dbh->query('SET NAMES utf8');
 	
-	//—·s‚Ì‚µ‚¨‚èi‘å˜gj‚Ì“o˜^
-	$sql = "INSERT INTO post(U_ID,P_CAT,P_TITLE,P_SDAY) VALUES(:u_id,:cate,:title,:sday)";
+	//æ—…è¡Œã®ã—ãŠã‚Šï¼ˆå¤§æž ï¼‰ã®ç™»éŒ²
+	$sql = "INSERT INTO post(U_ID,P_CAT,P_TITLE,P_SDAY,P_OFLAG) VALUES(:u_id,:cate,:title,:sday,:flag)";
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute(array(
 		'u_id'=>$u_id,
 		'cate'=>$cate,
 		'title'=>$title,
-		'sday'=>$sday
+		'sday'=>$sday,
+		'flag'=>$flag
 	));
 	
+	header("Location:member_page.php");
