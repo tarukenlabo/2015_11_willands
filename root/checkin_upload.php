@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	require "db_connect.php";
 	require "ErrorHandling.php";
 	require "ImageObj.php";
@@ -66,14 +66,18 @@
 		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION ='".$pref."'";
 		
 	}else{
-		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION = ".$country;
+		$map_id_sql = "SELECT ID FROM map_master WHERE LOCATION = '".$country."'";
 	}
+	
+	echo $map_id_sql;
 	
 	$stmt = $dbh -> prepare( $map_id_sql );
 	$stmt -> execute();
 	
 	$map_id = $stmt -> fetch(PDO::FETCH_ASSOC);
-	var_dump( $map_id );
+	if( !$map_id ){
+		$map_id["ID"] = 0;
+	}
 	
 	//post_check_inへの登録
 	$insert_sql = "INSERT INTO post_check_in(P_ID,U_ID,C_TITLE,C_POSIX,C_POSIY,C_DATE,C_COMMENT,M_ID) VALUES( ".$post_id.",".$user_id.",'".$_POST["uTitle"]."',".$_POST["uLat"].",".$_POST["uLng"].",now(),'".$_POST["uComment"]."',".$map_id["ID"]." )";
