@@ -35,7 +35,9 @@
 	while($test = $posts_map->fetch(PDO::FETCH_ASSOC) ){
 		$args[] = $test;
 	}
-
+	
+	$posix = $args[0]['C_POSIX'];
+	$posiy = $args[0]['C_POSIY'];
 
 	
 ?>
@@ -45,7 +47,8 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
-	var center = new google.maps.LatLng(35.67849, 139.39178);
+	//var center = new google.maps.LatLng(35.67849, 139.39178);
+	var center = new google.maps.LatLng(<?php echo $posix; ?>, <?php echo $posiy; ?>);
 	var zoom = 8;
 	var mapTypeId = google.maps.MapTypeId.ROADMAP
 	</script>
