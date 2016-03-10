@@ -4,7 +4,7 @@
 			<nav>
 			</nav>
 			
-<article class="hadairo">
+<article class="skyblue">
 
 	<div id="wrap">
 		<div class="contents-title align-c ">
@@ -15,7 +15,7 @@
 		</div>
 		
 		<div class="form-detail clearFix">
-			<div class="post_img l-float large-large-photo white">
+			<div class="post_img l-float large-photo white">
 				<img src="<?php echo $img_src; ?>">
 			</div>
 				

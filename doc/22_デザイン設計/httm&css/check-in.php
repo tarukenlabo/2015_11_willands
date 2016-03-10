@@ -3,9 +3,24 @@
 
 			<nav>
 				<ul>
-					<li class="l-float clear-text">(★地図で選ぶ)</li>
-					<li class="l-float clear-text">(★カテゴリーで選ぶ)</li>
-					<li class="l-float clear-text">(★キーワードで選ぶ)</li>
+					<li class="l-float clear-text box-3">
+						<div class="orange">
+							<p class="article-text">行き先が決まって無い方はこちら↓</p>
+							<h3>旅行記の検索を始める♪</h3>
+						</div>
+					</li>
+					<li class="l-float clear-text box-3">
+						<div class="skyblue">
+							<p class="article-text">旅行記を載せたい方はこちら↓</p>
+							<h3>メンバーになって旅行記をアップ♪</h3>
+						</div>
+					</li>
+					<li class="l-float clear-text box-3">
+						<div class="limegreen">
+							<p class="article-text">使い方を見たい方はこちら↓</p>
+							<h3>ご利用ガイドを見る♪</h3>
+						</div>
+					</li>
 				</ul>
 			</nav>
 			

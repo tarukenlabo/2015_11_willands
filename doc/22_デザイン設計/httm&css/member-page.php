@@ -4,7 +4,7 @@
 			<nav>
 			</nav>
 			
-			<article class="hadairo">
+			<article class="skyblue">
 				<div class="large-photo l-float white"></div>
 				<div class="r-float align-r margin30">
 					<h2 class="my-page">〇〇さんのマイページ</h2>
@@ -24,12 +24,12 @@
 							</div>
 							
 							<div class="r-float align-c margin10">
-								<p class="">公開ステータス</p>
+								<p class="clear-text">公開ステータス</p>
 								<p class="other-text">公開</p>
 							</div>
 						</a>
 					</div>
-					<button type="button" onclick="location.href=''" class="check-in l-float other-text shadow"><a class="clear-text" href="">チェックイン</a>
+					<button type="button" onclick="location.href=''" class="check-in l-float shadow"><a class="article-text clear-text" href="">チェックイン</a>
 				</div>
 			</article>
 			

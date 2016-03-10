@@ -32,20 +32,16 @@
 				
 			</header>
 
-			<nav class="nav_box">
+			<nav>
 				<ul>
-					<li class="l-float margin-none">
-						<div class="nav_button">
-							<img src="./img/pointer.png" class="margin10">
-							<p>地図でさがす</p>
-						</div>
+					<li class="l-float margin-none nav_button">
+							<img src="./img/pointer.png" class="margin10 ">
+							<p class="article-title bold margin-none">地図でさがす</p>
 					</li>
 
-					<li class="r-float margin-none">
-						<div class="nav_button">
+					<li class="r-float margin-none nav_button">
 							<img src="./img/folder.png" class="margin10">
-							<p>カテゴリでさがす</p>
-						</div>
+							<p class="article-title bold margin-none">カテゴリでさがす</p>
 					</li>
 
 				</ul>
