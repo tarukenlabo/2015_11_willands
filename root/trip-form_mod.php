@@ -5,10 +5,17 @@
 	
 	$u_id = $_SESSION['u_id'];
 	$post_id = $_GET['p_id'];
-
+	$user_id = $_SESSION['u_id'];
 	
 	require_once("./db_connect.php");
 	require_once("./functions.php");
+	require "ErrorHandling.php";
+	require "ImageObj.php";
+
+
+	$error = new ErrorHandling;
+	$image_obj = new ImageObj;
+	$e_message = 0;
 
 	$db = new cls_db();
 	$dbh = $db->db_connect();
@@ -38,12 +45,37 @@
 	
 	$posix = $args[0]['C_POSIX'];
 	$posiy = $args[0]['C_POSIY'];
+	
+	
+	
+	//ファイルサイズ判定
+	if( $error -> fileSizeDecision( (int)$_FILES["uPhoto"]["size"] ) ){
+		$e_message[] = "アップロードできるファイルサイズの上限20Mを超えています。";
+	}
+	
+	//ファイル拡張子判定
+	if( $error -> fileExtendDecision( (int)$_FILES["uPhoto"]["name"] ) ){
+		$e_message[] = "アップロードできるファイルの種類は画像のみです。";
+	}
+	
+	//一つでもエラーがあればリダイレクト
+	if( is_array( $e_message ) ){
+		header( "Location: ./chek-in_map.php" );
+	}
+	
+	//アップロード画像リネーム
+	$image_name = $image_obj -> imageRename( $_FILES["uPhoto"]["name"],$user_id,$post_id );
+	//TMPファイル移動
+	$upload_file_path = $image_obj -> imageMove( $_FILES["uPhoto"]["tmp_name"], $image_name );
+	
+	$_SESSION['photo_path'] = $upload_file_path;
 
 	
 ?>
 
 <!DOCTYPE html>
 <head>
+	<link rel="stylesheet" href="./css/post_style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
