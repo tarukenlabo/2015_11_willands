@@ -30,7 +30,8 @@
 				女性<input name="sex" type="radio" value="2" <?php if($u_sex == 2){ print "checked";}?>>
 		</p>
 		<p>自己紹介</p><textarea name="self"><?php echo $u_comment;?></textarea>
-		<p>アイコン<input name="icon" type="file"></p>
+		<p>アイコン<input name="thumb" type="file" value="写真選択"></p>
+		<p><img src="<?php echo $u_thumb; ?>"></p>
 		<input type="submit" value="確認画面へ">
 	</form>
 
