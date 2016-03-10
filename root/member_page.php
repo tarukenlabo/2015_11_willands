@@ -12,6 +12,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/post_style.css">
 	<title>マイページ</title>
 </head>
 <body>
