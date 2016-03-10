@@ -56,9 +56,15 @@
 	while($test = $posts_map->fetch(PDO::FETCH_ASSOC) ){
 		$args[] = $test;
 	}
-	
-	$posix = $args[0]['C_POSIX'];
-	$posiy = $args[0]['C_POSIY'];
+	$count = count($args);
+
+	if($count === 0){
+		$posix = 35.67849;
+		$posiy = 139.39178;
+	}else{
+		$posix = $args[0]['C_POSIX'];
+		$posiy = $args[0]['C_POSIY'];		
+	}
 	/*
 	echo '<pre>';
 	var_dump($args);
@@ -198,7 +204,7 @@
 <body>
 	<div id="wrap">
 		<div class="title">
-		<form action="./trip-form_mod.php?p_id=<?php echo $post_id; ?>" method="post">
+		<form action="./trip-form_mod.php?p_id=<?php echo $post_id; ?>" method="post" enctype="multipart/form-data">
 			<p>投稿タイトルを入力</p>
 			<input type="text" name="title" value="<?php echo $title; ?>">
 		</div>
@@ -206,7 +212,7 @@
 		<div class="post_detail">
 			<div class="post_img">
 				<img src="<?php echo $img_src; ?>">
-				
+				<input type="file" name="uPhoto" value="写真選択">
 			</div>
 			
 			<div class="post_detail2">
