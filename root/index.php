@@ -104,7 +104,10 @@
 					
 					
 				</div>
+<<<<<<< HEAD
 >>>>>>> c485497676182962970fe24f7a68e6ac45f261db
+=======
+>>>>>>> 209bf335e714084519f27ebfbcf98c5767064b1a
 			</article>
 			
 			<footer class="l-float">

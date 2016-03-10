@@ -43,34 +43,51 @@
 		$args[] = $test;
 	}
 	
-	$posix = $args[0]['C_POSIX'];
-	$posiy = $args[0]['C_POSIY'];
+	$count = count($args);
 	
-	
-	
-	//ファイルサイズ判定
-	if( $error -> fileSizeDecision( (int)$_FILES["uPhoto"]["size"] ) ){
-		$e_message[] = "アップロードできるファイルサイズの上限20Mを超えています。";
+	if($count === 0){
+		$posix = 35.67849;
+		$posiy = 139.39178;
+	}else{
+		$posix = $args[0]['C_POSIX'];
+		$posiy = $args[0]['C_POSIY'];		
 	}
 	
-	//ファイル拡張子判定
-	if( $error -> fileExtendDecision( (int)$_FILES["uPhoto"]["name"] ) ){
-		$e_message[] = "アップロードできるファイルの種類は画像のみです。";
+	
+	$img_title = $_FILES['uPhoto']["name"];
+	if(empty($img_title)){
+		$get_img_sql = "SELECT P_EYE FROM post WHERE P_ID =".$post_id;
+		$get_img = $dbh->prepare($get_img_sql);
+		$get_img->execute();
+		
+		foreach($get_img as $val){
+			$img_src = $val['P_EYE'];
+		}
+		
+		$_SESSION['photo_path'] = $img_src;
+	}else{
+		//ファイルサイズ判定
+		if( $error -> fileSizeDecision( (int)$_FILES["uPhoto"]["size"] ) ){
+			$e_message[] = "アップロードできるファイルサイズの上限20Mを超えています。";
+		}
+		
+		//ファイル拡張子判定
+		if( $error -> fileExtendDecision( (int)$_FILES["uPhoto"]["name"] ) ){
+			$e_message[] = "アップロードできるファイルの種類は画像のみです。";
+		}
+		
+		//一つでもエラーがあればリダイレクト
+		if( is_array( $e_message ) ){
+			header( "Location: ./chek-in_map.php" );
+		}
+		
+		//アップロード画像リネーム
+		$image_name = $image_obj -> imageRename( $_FILES["uPhoto"]["name"],$user_id,$post_id );
+		//TMPファイル移動
+		$upload_file_path = $image_obj -> imageMove( $_FILES["uPhoto"]["tmp_name"], $image_name );
+		
+		$_SESSION['photo_path'] = $upload_file_path;
 	}
-	
-	//一つでもエラーがあればリダイレクト
-	if( is_array( $e_message ) ){
-		header( "Location: ./chek-in_map.php" );
-	}
-	
-	//アップロード画像リネーム
-	$image_name = $image_obj -> imageRename( $_FILES["uPhoto"]["name"],$user_id,$post_id );
-	//TMPファイル移動
-	$upload_file_path = $image_obj -> imageMove( $_FILES["uPhoto"]["tmp_name"], $image_name );
-	
-	$_SESSION['photo_path'] = $upload_file_path;
-
-	
 ?>
 
 <!DOCTYPE html>
@@ -184,6 +201,12 @@
 	             infoWindow.open(map,marker);
 	             map.panTo( latlng);
 	    });
+	    
+	    google.maps.event.addListener(map, 'dragstart', function() //◆地図が動いたらインフォウィンドウをクローズする。
+		{
+		infoWindow.close();
+		});
+
 	} 
 	 
 	window.onload = initialize;
