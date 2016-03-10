@@ -2,7 +2,7 @@
 <html>
 <head></head>
 <body>
-	<form method="post" action="regist.php">
+	<form method="post" action="./member_comp.php">
 	  <input type="hidden" name="mode" value="regist_confirm">
 	  <table>
 	    <caption>会員情報登録フォーム</caption>

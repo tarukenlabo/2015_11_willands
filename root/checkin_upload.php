@@ -1,10 +1,13 @@
-﻿<?php
+<?php
 	require "db_connect.php";
 	require "ErrorHandling.php";
 	require "ImageObj.php";
 	
-	$user_id = $_GET["u_id"];
+	session_start();
+	
+	$user_id = $_SESSION["u_id"];
 	$post_id = $_GET["p_id"];
+	
 	
 	$error = new ErrorHandling;
 	$image_obj = new ImageObj;
@@ -85,12 +88,14 @@
 	$stmt = $dbh->prepare($select_sql);
 	$stmt->execute();
 	
+	echo $select_sql;
 	//チェックインIDの配列作成
 	while( $result = $stmt -> fetch( PDO::FETCH_NUM ) ){
 		foreach( $result as $val ){
 			$C_ID_array[] = $val;
 		}
 	}
+	
 	
 	//チェックインIDの最大値取得
 	$key_max = max( array_keys($C_ID_array) );
