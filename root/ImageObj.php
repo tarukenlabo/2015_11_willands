@@ -1,6 +1,5 @@
 ﻿<?php
 	class ImageObj {
-			
 		//ファイル名生成
 		public function imageRename( $image_name,$user_id,$post_id ){
 			$rename = time()."_". $user_id. $post_id."_".$image_name;

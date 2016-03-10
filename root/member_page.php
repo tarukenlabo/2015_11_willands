@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$u_id = $_SESSION['u_id'];
 
 	require_once("./user.php");
 	require_once("./post.php");
@@ -11,6 +12,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/post_style.css">
 	<title>マイページ</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
 
 			<h3><?php echo $u_info['U_NAME'] ; ?>さんの旅行一覧</h3>
 
-			<a href=<?php echo "./trip_flame.php?u_id=" . $u_info['U_ID']; ?>>
+			<a href=<?php echo "./trip_flame.php?u_id=" . $u_id; ?>>
 			<p>新しい旅行記を作成</p>
 			</a>
 
@@ -62,7 +64,7 @@
 						</a>
 						<div>
 							<p><?php 
-								if ($post['P_OFLAG'] = 1){
+								if ($post['P_OFLAG'] == 0){
 									echo "公開";
 								} else {
 									echo "非公開";

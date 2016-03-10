@@ -1,3 +1,16 @@
+﻿<?php
+	require "db_connect.php";
+	$db = new cls_db();
+	$dbh = $db->db_connect();
+	
+	$dbh -> query( "SET NAMES utf8" );
+	
+	$sql = "SELECT * FROM post";
+	$stmt = $dbh -> prepare( $sql );
+	$stmt -> execute();
+	
+	var_dump( $stmt );
+?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
