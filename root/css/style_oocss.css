@@ -4,20 +4,21 @@ body{
 
 }
 
-container{
-
+#wrap{
+	width : 960px;
+	
 }
 
 header{
-
 }
 
 nav{
+	height : 100px;
 
 }
 
-main{
-
+article{
+	width : 900px;
 }
 
 footer{
@@ -27,12 +28,14 @@ footer{
 
 /*----common----*/
 
-.clear_fix{
-	clear:both
+.clearFix{
+	clear:both;
 	content:".";
 	display:block;
-	line-height:0;
+	line-height:;
 }
+
+
 
 /*----Structure-----*/
 
@@ -41,6 +44,8 @@ footer{
 */
 
 .logo{
+	width : 300px;
+	height : 200px;
 	
 }
 
@@ -59,25 +64,31 @@ footer{
 */
 
 .box{
-
+	width :100%;
+	height : 500px;
+	border-radius:5px;
+	box-sizing : border-box;
 }
 
 .text-box-1line{
-	width:;
-	height:;
+	width:700px;
+	height:20px;
 	border-radius:5px;
+	box-sizing : border-box;
 }
 
 .text-box-5line{
 	width:;
 	height:;
 	border-radius:5px;
+	box-sizing : border-box;
 }
 
 .photo{
 	width:;
 	height:;
 	border-radius:5px;
+	box-sizing : border-box;
 }
 
 /*
@@ -102,16 +113,21 @@ footer{
 文字の色とサイズ
 */
 
+.clear_text{
+	text-decoration : none;
+	list-style : none;
+}
+
 //表示内容のタイトル
 .contents-title{
-	font-size :;
-	color : ;
+	font-size :2em;
+	color :#222;
 }
 
 //記事のタイトル
 .article-title{
-	font-size :;
-	color : ;
+	font-size :1.8em;
+	color :#222;
 }
 
 //個別記事のタイトル
@@ -145,8 +161,13 @@ footer{
 }
 
 .shadow{
-	box-shadow : ;
+	box-shadow :2px 1px 10px 3px rgba(0,0,0,0.1);
 }
+
+/*------------new-member----------*/
+
+
+
 
 
 
