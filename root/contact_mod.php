@@ -5,6 +5,8 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./style.css" type="text/css">
+	<link rel="stylesheet" href="./style_oocss.css" type="text/css">
 	<title>お問い合わせエラー</title>
 </head>
 <body>
@@ -20,9 +22,21 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./style.css" type="text/css">
+	<link rel="stylesheet" href="./style_oocss.css" type="text/css">
 	<title>お問い合わせの確認</title>
 </head>
 <body>
+
+		<div id="wrap" class="align-center orange">
+			<?php require 'header.php' ; ?>
+
+			<nav>
+			</nav>
+			
+		<article class="hadairo">
+
+		<div class="form_box align-c">
 	<h1>お問い合わせ</h1>
 	<p>たるナビに関するご意見、ご質問はこちらからお問い合わせください。</p>
 	<form method="post" action="./contact_comp.php">
@@ -56,11 +70,15 @@
 	  </table>
 	  <div>
 	    <p>
-	      <a href="./contact.php"><input type="button" name="return" value=" 編集に戻る "></a>
-	      <input type="submit" name="submit" value=" 送 信 ">
+	      <a href="./contact.php"><input class="check_button" type="button" name="return" value=" 編集に戻る "></a>
+	      <input class="check_button" type="submit" name="submit" value=" 送 信 ">
 	    </p>
 	  </div>
 	</form>
+		</div>
+
+	</article>
+	</div>
 </body>
 </html>
 <?php
