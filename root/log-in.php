@@ -50,8 +50,7 @@ if(!isset($_POST['login'])) {
 	  // セッション変数を作成→セッション変数に $formUserID を登録
 	  $_SESSION['loginUser'] = $formMail;
 	  $_SESSION['u_id'] = $userId;
-	  header("Location:member_page.php");
-	  //header("Location:test.php");
+	  header("Location:test.php");
 	  // header("Location:index.php");
 	  }
 	}
@@ -62,25 +61,49 @@ if(!isset($_POST['login'])) {
   //入力画面表示画面	
   function inputForm() {
 ?>
-	<!DOCTYPE html>
-	<html lang="ja">
+
+<!DOCTYPE html>
+<html lang="ja">
 	<head>
-	<meta charset="UTF-8">
-	<title>ログイン</title>
-	</head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<link rel="stylesheet" href="./css/style.css" type="text/css">
+		<title>ログインページ</title>
+	<head>
 	<body>
-	  <h1>ログインページ</h1>
-	  <form action="log-in.php" method="post">
-	  <label for="name">Ｅメールアドレス</label>：
-	  <input type="text" name="formMail" id="mail"/>
-	  <br />
-	  <label for="password">パスワード</label>：
-	  <input type="text" name="formPass" id="pass"/>
-	  <br />
-	  <input type="submit" name="login" value="ログイン" />
-	</form>
-	</body>
-	</html>
+		<div id="wrap" class="align-center orange">
+			<?php require 'header.php' ; ?>
+
+			<nav>
+				<ul>
+					<li class="l-float clear-text">(★地図で選ぶ)</li>
+					<li class="l-float clear-text">(★カテゴリーで選ぶ)</li>
+					<li class="l-float clear-text">(★キーワードで選ぶ)</li>
+				</ul>
+			</nav>
+
+			<article class="clearFix white">
+				<h2 class="contents-title">ログイン</h2>
+
+			<div class="box shadow">
+				<form action="log-in.php" method="post">
+					<p for="name" class="other-text">メールアドレス</p>
+					<input type="text" name="formMail" id="mail" class="box-line1_450">
+					<br />
+					<p for="password" class="other-text">パスワード</p>
+					<input type="text" name="formPass" id="pass" class="box-line1_450">
+					<br />
+					<div class="align-c"><input type="submit" name="login" value="ログイン" class="button_120 white align-center"></div>
+				</form>
+			</div><!--.box shadow-->
+			</article>
+			
+			<?php require 'footer.php' ; ?>
+		</div><!--#wrap-->
+	</body>	
+</html>
+
+
 <?php
   }
 //エラー表示関数
@@ -88,18 +111,19 @@ function error($errorType) {
   
   switch($errorType) {
     case 1:
-    $errorMsg = "Ｅメールアドレスとパスワードを入力してください。";
+    $errorMsg = "メールアドレスとパスワードを入力してください。";
     break;
     
     case 2:
-    $errorMsg = "Ｅメールアドレスが違います";
+    $errorMsg = "メールアドレスが違います";
     break;
     
     case 3:
     $errorMsg = "パスワードが違います";
     break;
 }
-?>	
+?>
+	
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -107,7 +131,7 @@ function error($errorType) {
 <title>ログイン</title>
 </head>
 <body>
-<h1>エラーページ</h1>
+<h2 class="contents-title">エラーページ</h2>
 <?php
   print $errorMsg;
 ?>
