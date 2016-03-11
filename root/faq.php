@@ -2,22 +2,22 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<title>(★各ページタイトル入れてください)</title>
 		<link rel="stylesheet" href="./style_oocss.css" type="text/css">
 		<link rel="stylesheet" href="./style.css" type="text/css">
-		<title>(★各ページタイトル入れてください)</title>
-	<head>
+		<title>(★各ページタイトル入れてください)</title>       
+	</head>
 	<body>
 		<div id="wrap" class="align_center orange">
 			<?php require 'header.php' ; ?>
-
 			<nav>
 				<ul>
 					<li class="l-float clear_text">(★地図で選ぶ)</li>
 					<li class="l-float clear_text">(★カテゴリーで選ぶ)</li>
 					<li class="l-float clear_text">(★キーワードで選ぶ)</li>
 				</ul>
-			</nav>
-			
+			</nav>			
 			<article class="clearFix white">
 				<h2 class="contents-title">よくある質問</h2>
 				<div class="box-frame shadow align_center">

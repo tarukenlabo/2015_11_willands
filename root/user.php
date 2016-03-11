@@ -15,10 +15,10 @@
 		$stmt = $dbh->prepare($select);
 		$stmt->execute();
 		
-		foreach($stmt as $post) {
+		foreach($stmt as $data) {
 		}
 		
-		return $post;
+		return $data;
 	}
 
 	//ユーザー情報検索：ユーザーID指定
@@ -34,10 +34,10 @@
 		$stmt = $dbh->prepare($select);
 		$stmt->execute();
 		
-		foreach($stmt as $post) {
+		foreach($stmt as $data) {
 		}
 		
-		return $post;
+		return $data;
 	}
 
 	//ユーザー情報一括検索：ユーザーID指定
@@ -57,10 +57,10 @@
 		$stmt = $dbh->prepare($select);
 		$stmt->execute();
 		
-		foreach($stmt as $post) {
+		foreach($stmt as $data) {
 		}
 		
-		return $post;
+		return $data;
 	}
 
 

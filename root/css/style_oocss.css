@@ -48,6 +48,11 @@ dl.search dd button span{
 
 /*検索バー終了*/
 
+#wrap{
+	width : 960px;
+	
+}
+
 
 body{
 
@@ -67,6 +72,7 @@ nav{
 }
 
 article{
+	width : 900px;
 	width : 960px;
 	padding-top : 10px;
 	padding-bottom : 20px;
@@ -82,6 +88,11 @@ footer{
 	clear :both;
 }
 
+.clearFix{
+	clear:both;
+	content:".";
+	display:block;
+	line-height:;
 .clearFix:after{
 	clear:both;
 	content:".";
@@ -136,6 +147,16 @@ footer{
 箱、写真
 */
 
+.box{
+	width :100%;
+	height : 500px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+.text-box-1line{
+	width:700px;
+	height:20px;
 .box-100%{
 	width :100%;
 }
@@ -239,6 +260,15 @@ footer{
 文字の色とサイズ
 */
 
+.clear_text{
+	text-decoration : none;
+	list-style : none;
+}
+
+//表示内容のタイトル
+.contents-title{
+	font-size :2em;
+	color :#222;
 .clear-text{
 	text-decoration : none;
 	list-style : none;
@@ -266,6 +296,8 @@ footer{
 
 /*記事のタイトル*/
 .article-title{
+	font-size :1.8em;
+=======
 	margin : 30px;
 	font-size :1.5em;
 	color :#222;
@@ -320,6 +352,11 @@ footer{
 .shadow{
 	box-shadow :2px 1px 10px 3px rgba(0,0,0,0.1);
 }
+
+/*------------new-member----------*/
+
+
+
 
 
 

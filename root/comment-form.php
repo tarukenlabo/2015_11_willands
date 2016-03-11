@@ -1,10 +1,16 @@
+<?php
+	session_start();
+	require_once("./db_connect.php");
+	$p_id = $_GET['p_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<link rel="stylesheet" href="./css/sato-style_oocss.css" type="text/css">
 		<link rel="stylesheet" href="./css/style.css" type="text/css">
-		<title>投稿完了</title>
+		<title>コメントページ</title>
 	<head>
 	<body>
 		<div id="wrap" class="align-center orange">
@@ -19,18 +25,16 @@
 			</nav>
 
 			<article class="clearFix white">
-				<h2 class="contents-title align-c">投稿記事編集</h2>
+				<h2 class="contents-title align-c">コメント</h2>
 
 				<div class="box shadow">
 				
 					<div class="align-c">
-						
-							<p class="other-text align-c"><?php echo "投稿完了しました。"; ?></p>
-							<div class="align-c">
-								<button onClick="location.href='./member.php'" class="button_120 white align-center">マイページヘ</button>
-								<button onClick="location.href='./article.php?p_id=<?php echo $post_id; ?>'" class="button_200 white align-center">投稿した記事を見る</button>
-							</div>
-								
+						<form action="./comment-form-mod.php?p_id=<?php echo $p_id; ?>" method="post" enctype="multipart/form-data">
+							<textarea name="comment" class="box-line4"></textarea>
+							<p class="other-text align-c">以上の内容でよろしければ送信ボタンを押してください</p>
+							<div class="align-c"><input type="submit" value="送 信" class="button_120 white align-center"></div>
+						</form>
 				</div> <!--.box shadow-->
 			</artcle>
 			

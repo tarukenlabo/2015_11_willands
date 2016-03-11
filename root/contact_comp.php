@@ -1,32 +1,17 @@
 <?php
-	if ( !isset($_POST["submit"]) ) {
+	// 共通ヘッダー要素を読み込み
+	require 'header.php';
+
+	// エラーの有無で表示させるボディ部分を分岐
+	if ( !isset($_POST["submit"]) ) {  // 確認ページを経由しているかのチェック
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>お問い合わせエラー</title>
-</head>
-<body>
-	<div id="wrap" class="align-center orange">
-			<?php require 'header.php' ; ?>
-
-			<nav>
-			</nav>
-			
-		<article class="hadairo">
-
-		<div class="form_box">
-	<h1 class="">このページは直接アクセスできません。</h1>
-	<p>お手数ですが<a href="./contact.php">お問い合わせ入力ページ</a>にお戻りください。</p>
+	<article class="hadairo">
+		<div class="align-c">
+			<h1 class="">このページは直接アクセスできません。</h1>
+			<p>お手数ですが<a href="./contact.php">お問い合わせ入力ページ</a>にお戻りください。</p>
 		</div>
 	</article>
-	</div>
-	
-</body>
-</html>
 <?php
-	exit;
 	} else {
 	// メールの送信準備
 	ini_set('display_errors',0);
@@ -62,36 +47,21 @@ EOD;
 			echo '<p>メールが送信できませんでした。<br><p>お手数ですが<a href="./contact.php">お問い合わせ入力ページ</a>にお戻りください。</p>';
 			exit;
 		}
-	}
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>お問い合わせ完了</title>
-</head>
-<body>
-
-	<div id="wrap" class="align-center orange">
-			<?php require 'header.php' ; ?>
-
-			<nav>
-			</nav>
-			
-		<article class="hadairo">
-
-		<div class="form_box align-c">
-	<h1>お問い合わせ</h1>
-	<p>
-		送信完了しました♪<br>
-		ありがとうございました。
-	</p>
-	<p>
-		<a href="./index.php"><input type="button" name="totop" value=" トップページへ "></a>
-	</p>
-	
-	</div>
+	<article class="hadairo">
+		<div class="form_box">
+		<h1>お問い合わせ</h1>
+			<p class="align-c">
+				送信完了しました♪<br>
+				ありがとうございました。
+			</p>
+			<p class="align-c">
+				<a href="./index.php"><input  type="button" name="totop" value=" トップページへ "></a>
+			</p>
+		</div>
 	</article>
-	</div>
-</body>
-</html>
+<?php
+	}
+	// 共通フッター要素を読み込み
+	require 'footer.php';
+?>

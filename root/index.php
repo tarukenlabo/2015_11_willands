@@ -24,6 +24,8 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<title>(★各ページタイトル入れてください)</title>
 		<link rel="stylesheet" href="./style_oocss.css" type="text/css">
 		<title>たるナビ -Tabi-Route Navigation-</title>
 	</head>
@@ -54,6 +56,11 @@
 				
 			</header>
 
+			<nav>
+				<ul class= "clearFix">
+					<li>(★地図で選ぶ)</li>
+					<li>(★カテゴリーで選ぶ)</li>
+					<li>(★キーワードで選ぶ)</li>
 			<nav class="nav_box">
 				<ul>
 					<li class="l-float margin-none">
@@ -68,7 +75,6 @@
 							<p>カテゴリでさがす</p>
 						</div>
 					</li>
-
 				</ul>
 
 			</nav>
@@ -118,6 +124,7 @@
 					</ul>
 				
 			</footer>
+		</div><!--#-->
 		</div>
 	</body>	
 </html>

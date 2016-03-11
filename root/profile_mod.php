@@ -1,8 +1,16 @@
 <?php
 	require_once("./db_connect.php");
+	require "ErrorHandling.php";
+	require "ImageObj.php";
 
 	//セッション開始
 	session_start();
+
+	//初期処理
+	$error = new ErrorHandling;
+	$image_obj = new ImageObj;
+	$e_message = 0;
+
 	
 	$_SESSION["user_data"] = $_POST;
 
@@ -10,10 +18,34 @@
 	$age = $_POST["age"];
 	$sex = $_POST["sex"];
 	$self = $_POST["self"];
-	$icon = ( $_FILES["icon"] );
-	var_dump($_POST);
-	echo "<br>";
-	var_dump($icon);
+	$thumb = ( $_FILES["thumb"] );
+
+	/////////////////
+	//アイコン取込処理
+	/////////////////
+	
+	//ファイルサイズ判定
+	if( $error -> fileSizeDecision( (int)$_FILES["thumb"]["size"] ) ){
+		$e_message[] = "アップロードできるファイルサイズの上限20Mを超えています。";
+	}
+	
+	//ファイル拡張子判定
+	if( $error -> fileExtendDecision( (int)$_FILES["thumb"]["name"] ) ){
+		$e_message[] = "アップロードできるファイルの種類は画像のみです。";
+	}
+	
+	//一つでもエラーがあればリダイレクト
+	if( is_array( $e_message ) ){
+		header( "Location: ./chek-in_map.php" );
+	}
+	
+	//アップロード画像リネーム
+	$image_name = $image_obj -> imageRenameForThumb( $_FILES["thumb"]["name"],$_SESSION["u_id"] );
+
+	//TMPファイル移動
+	$upload_file_path = $image_obj -> imageMoveForThumb( $_FILES["thumb"]["tmp_name"], $image_name );
+	
+	$_SESSION['thumb_path'] = $upload_file_path;
 
 ?>
 
@@ -35,8 +67,8 @@
 						echo '女性';
 					} ?></p>
 		<p>自己紹介 <?php echo $self; ?></p>
-		<p>アイコン<?php echo $icon; ?></p>
-		 <input type="submit" value="これで登録"> 
+		<p>アイコン<?php echo $thumb["name"]; ?></p>
+		<input type="submit" value="これで登録"> 
 	</form>
 
 	</body>
