@@ -23,6 +23,8 @@
 	</head>
 	
 	<body>
+	<article class="hadairo">
+	<div class="form_box">
 	<form action="./profile_mod.php" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
@@ -49,7 +51,8 @@
 		  	<td><input type="submit" value="確認画面へ"></td>
 		  </tr>
 	</form>
-
+	</div>
+	</article>
 	</body>
 <html>
 
