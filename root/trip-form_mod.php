@@ -90,9 +90,16 @@
 	}
 ?>
 
+<!-- デザイン班のheader.phpと共通する<head>部分　ここから -->
 <!DOCTYPE html>
+<html lang="ja">
 <head>
-	<link rel="stylesheet" href="./css/post_style.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+	<title>たるナビ -Tabi-Route Navigation-</title>
+<!-- デザイン班のheader.phpと共通する<head>部分　ここまで -->
+
+	<link rel="stylesheet" href="./css/lightbox.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
@@ -202,41 +209,74 @@
 
 </head>
 <body>
+	<!-- デザイン班のheader.phpと共通する<body>部分　ここから -->
+	<div id="container" class="align-center">
+		<header>
+			<div class="header_bar">
+			</div>
+
+			
+			<div class="search">
+				
+				<form action="/" name="search" method="get" class="search_form">
+				<dl class="search">
+				<dt><input type="text" name="search" value="" placeholder="検索" /></dt>
+				<dd><button><span></span></button></dd>
+				</dl>
+				</form>
+				
+				<img src="./img/sea.jpg">
+				<div class="tarunavi_logo">
+				<img src="./img/tarunavi_logo.png" >
+				</div>
+			</div>
+		</header>
+	<!-- デザイン班のheader.phpと共通する<body>部分　ここまで -->
+<article class="skyblue">
 	<div id="wrap">
-		<table>
-			<tr>
-				<th>タイトル</th>
-				<td><?php echo $_POST['title']; ?></td>
-			</tr>
+		<div class="contents-title align-c ">
+			<p class="article-title"><?php echo $_POST['title']; ?></p>
+		</div>
 			
-			<tr>
-				<th>投稿テーマ</th>
-				<td><?php echo $cate_name; ?></td>
-			</tr>
-			
-			<tr>
-				<th>人数</th>
-				<td><?php echo $_POST["peaple"]; ?>人</td>
-			</tr>
-			
-			<tr>
-				<th>金額</th>
-				<td>￥<?php echo $_POST['price']; ?></td>
-			</tr>
-			
-			<tr>
-				<th>日数</th>
-				<td><?php echo $_POST['sday']; ?>&nbsp～&nbsp<?php echo $_POST['fday']; ?></td>
-			</tr>
-			
-			<tr>
-				<th>記事全体コメント</th>
-				<td><?php echo $_POST['comment']; ?></td>
-			</tr>
-		</table>	
-			
-			
-			<div id="checkins">
+		<div class="form-detail clearFix">
+			<div class="post_img l-float large-photo white">
+				<img src="<?php echo $img_src; ?>">
+				<input type="file" name="uPhoto" value="写真選択">
+			</div>
+
+			<div class="form-detail2 r-float">
+				<table>
+					<tr>
+						<th><p class="">投稿テーマ</p></th>
+						<td><?php echo $cate_name; ?></td>
+					</tr>
+					
+					<tr>
+						<th><p class="">人数</p></th>
+						<td><?php echo $_POST["peaple"]; ?>人</td>
+					</tr>
+					
+					<tr>
+						<th><p class="">金額</p></th>
+						<td>￥<?php echo $_POST['price']; ?></td>
+					</tr>
+					
+					<tr>
+						<th><p class="">日数</p></th>
+						<td><?php echo $_POST['sday']; ?>&nbsp～&nbsp<?php echo $_POST['fday']; ?></td>
+					</tr>
+				</table>
+				<a href="#map_canvas"><button id="" class="">地図でルートを見る</button></a>
+			</div>  <!--post_detail2-->
+		<!-- デザインカンプに無いけど、あったほうが良い ここから-->
+			<div class="clearFix align-center text-box">
+				<p class="other-text ">記事全体コメント</p>
+				<p><?php echo $_POST['comment']; ?><p>
+			</div>
+		<!-- デザインカンプに無いけど、あったほうが良い ここまで-->
+		</div> <!--post_detail-->
+
+			<div id="checkins" class="box-frame shadow white ">
 				<?php foreach($posts as $checks):
 					$c_id = $checks['C_ID'];
 					$p_id = $checks['P_ID'];
@@ -256,12 +296,40 @@
 								<?php endforeach; ?>
 						</div>
 				<?php endforeach; ?>
-			</div>
-			<div  id="map_canvas" style="width:90%;height:600px;"></div>
+			</div> <!--checkins-->
+
+		<div id="map_canvas" class="map box-frame shadow white "></div>
 
 		<button onClick="history.back()">戻る</button>
 		<button onClick="location.href='./post_rough.php?p_id=<?php echo $post_id; ?>'">下書きを保存（非公開）</button>
 		<button onClick="location.href='./post_release.php?p_id=<?php echo $post_id; ?>'">公開</button>
-	</div>
-</body>
+	</div> <!-- #wrap -->
+</article>
+<!-- デザイン班のfooter.phpと共通する部分　ここから -->
+			<footer class="clearFix">
+				<div class="fotter_logo l-float white">
+					<img src="./img/tarunavi_logo.png" >
+					
+					<div class="r-float">
+						<ul class="">
+							<li class="l-float margin10"><a class="foot-text" href="#">たるナビトップ</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">ログイン</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">会員登録</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">利用規約</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">プライバシーポリシー</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">ご利用ガイド</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">お問い合わせ</a></li>
+						</ul>
+						<div class="foot-anime foot-anime2">
+							<img src="./img/l_019.png" width="100">
+						</div>
+					</div>
+					
+				</div>
+				
+					
+			</footer>
+		</div>
+	</body>	
 </html>
+<!-- デザイン班のfooter.phpと共通する部分　ここまで -->
