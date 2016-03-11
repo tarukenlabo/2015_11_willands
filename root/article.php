@@ -5,6 +5,15 @@
 	$db = new cls_db();
 	$dbh = $db->db_connect();
 	$dbh->query('SET NAMES utf8');
+	
+	
+	//ログインしてるか判断
+	session_start();
+	if(empty($_SESSION['u_id'])){
+		$u_id = "";
+	}else{
+		$u_id = $_SESSION['u_id'];
+	}
 
 	$p_id = $_GET['P_ID'];
 	//しおり内容取得
@@ -255,7 +264,12 @@
 				</div>
 			<?php endforeach; ?>
 		</div>
-
-		<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
+		
+		<?php if(empty($u_id)): ?>
+			
+		<?php else: ?>
+			<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
+		<?php endif; ?>
+		
 	</body>
 </html>
