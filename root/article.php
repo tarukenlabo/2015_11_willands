@@ -30,6 +30,8 @@
 	$uName = $dbh->prepare($get_u_name);
 	$uName->execute();
 	
+	$userName = "名前未設定";
+	
 	foreach($uName as $name){
 		$userName = $name['U_NAME'];
 	}

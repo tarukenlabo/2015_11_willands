@@ -69,7 +69,6 @@
 							<p>地図でさがす</p>
 						</div>
 					</li>
-
 					<li class="r-float margin-none">
 						<div class="nav_button">
 							<img src="./img/folder.png" class="margin10">
@@ -109,7 +108,6 @@
 					
 				</div>
 			</article>
-			
 			<footer class="l-float">
 				<div class="fotter_logo l-float">
 					<img src="./img/tarunavi_logo_footer.png" >

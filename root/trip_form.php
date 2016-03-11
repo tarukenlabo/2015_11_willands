@@ -38,6 +38,8 @@
 	$stmt = $dbh->prepare($get_u_info);
 	$stmt->execute();
 	
+	$u_name = "名前未設定";
+	
 	foreach($stmt as $u_info){
 		$u_name = $u_info['U_NAME'];
 	}
@@ -105,19 +107,7 @@
 	    mapTypeId: mapTypeId
 	    }
 	    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	 /*
-	    var markers = [
-	    ['公園1', 35.760191,140.061629,'kouen'],
-	    ['公園2', 35.643033,139.860592,'kouen'],
-	    ['公園3', 35.596286,140.141172,'kouen'],
-	    ['温泉1', 35.805307,140.16651,'onsen1'],
-	    ['温泉2',35.717602,139.980167,'onsen1'],
-	    ['温泉3', 35.42295,139.89739,'onsen1'],
-	    ['水族館1',36.333294,140.593817,'suizokukan'],
-	    ['水族館2', 35.442851,139.644607,'suizokukan'],
-	    ['水族館3', 35.728681,139.719765,'suizokukan'],
-	    ];
-	    */
+
 	    var markers = [
 	    	<?php foreach($args as $val): ?>
 	    		["<?php echo $val["C_TITLE"]; ?>",<?php echo $val["C_POSIX"]; ?>,<?php echo $val["C_POSIY"]; ?>,'kouen'],
