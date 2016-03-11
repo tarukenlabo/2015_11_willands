@@ -225,7 +225,7 @@
 		<div class="contents-title align-c ">
 		<form action="./trip-form_mod.php?p_id=<?php echo $post_id; ?>" method="post" enctype="multipart/form-data">
 			<p class="article-title">投稿タイトルを入力</p>
-			<input class="box-line2 type="text" name="title" value="<?php echo $title; ?>">
+			<input class="box-line2" type="text" name="title" value="<?php echo $title; ?>">
 		</div>
 		
 		<div class="form-detail clearFix">
@@ -276,9 +276,6 @@
 			</div>
 		</div> <!--post_detail-->
 
-<!--		<input id="post_edit_btn" type="submit" value="確認画面へ">
-		</form>  -->
-			
 			<div id="checkins" class="box-frame shadow white ">
 				<?php foreach($posts as $checks):
 					$c_id = $checks['C_ID'];
@@ -302,8 +299,7 @@
 				<?php endforeach; ?>
 			</div> <!--checkins-->
 
-<!--	<div  id="map_canvas" style="width:90%;height:600px;"></div> -->
-		<div  id="map_canvas" class="map box-frame shadow white "></div>
+		<div id="map_canvas" class="map box-frame shadow white "></div>
 
 			<input id="post_edit_btn" type="submit" value="確認画面へ">
 		</form>
