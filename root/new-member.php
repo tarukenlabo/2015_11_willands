@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 	<head>
-		<meta charset="UTF=8">
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<link rel="stylesheet" href="./css/style.css" type="text/css">
 		<title>会員登録</title>
-	</head>
-	
+	<head>
 	<body>
-		<div id="wrap" class="arlign_center">
-			<header>
-				<p>(★ヘッダーです)</p>
-			</header>
-			
+		<div id="wrap" class="align-center orange">
+			<?php require 'header.php' ; ?>
+
 			<nav>
 				<ul>
-					<li class="l-float clear_text">(★地図で選ぶ)</li>
-					<li class="l-float clear_text">(★カテゴリーで選ぶ)</li>
-					<li class="l-float clear_text">(★キーワードで選ぶ)</li>
+					<li class="l-float clear-text">(★地図で選ぶ)</li>
+					<li class="l-float clear-text">(★カテゴリーで選ぶ)</li>
+					<li class="l-float clear-text">(★キーワードで選ぶ)</li>
 				</ul>
 			</nav>
 
-			<article class="clearFix align_center">
-				<div class="box shadow">
+			<article class="clearFix white">
+				<h2 class="contents-title">会員情報登録フォーム</h2>
+		
+			<div class="box shadow">
+
 				<form method="post" action="regist.php">
 					<input type="hidden" name="mode" value="regist_confirm">
-						<table>
-							<caption class="contents-title">会員情報登録フォーム</caption>
-						<tr>
-							<td class="article-title">メールアドレス</td>
-							<td class="text-box-1line"><?php if (isset($email)): print $email; else: ?><input type="text" size="30" name="input_mail"><?php endif; ?></td>
-						</tr>
-						<tr>
-							<td class="article-title">パスワード</td>
-							<td class="text-box-1line"><input type="password" size="30" name="input_pass" value="<?php if (isset($input_pass)):print $input_pass; endif; ?>">&nbsp;&nbsp;※ 6文字以上16文字以下</td>
-						</tr>
-						<tr>
-							<td class="article-title">パスワード（確認）</td>
-							<td class="text-box-1line"><input type="password" size="30" name="pass_conf" value="<?php if (isset($pass_conf)):print $pass_conf; endif; ?>">&nbsp;&nbsp;※ 6文字以上16文字以下</td>
-						</tr>
-						</table>
-						<div><input type="submit" name="submit" value=" ログイン "></div>
+						
+						<p class="other-title"><input type="button" value="必 須" class="p-button" disabled>メールアドレス</p>
+						<?php if (isset($email)): print $email; else: ?><input type="text" size="30" name="input_mail"  class="box-line1"><?php endif; ?></p>
+
+						<p class="other-title"><input type="button" value="必 須" class="p-button" disabled>パスワード</p>
+						<input type="password" size="30" name="input_pass" value="<?php if (isset($input_pass)):print $input_pass; endif; ?>" class="box-line1">&nbsp;&nbsp;※ 6文字以上16文字以下
+
+						<p class="other-title"><input type="button" value="必 須" class="p-button" disabled>パスワード（確認）</p>
+						<input type="password" size="30" name="pass_conf" value="<?php if (isset($pass_conf)):print $pass_conf; endif; ?>" class="box-line1">&nbsp;&nbsp;※ 6文字以上16文字以下
+						
+						<div><input type="submit" name="submit" value=" ログイン " class="button"></div>
 				</form>
-				</div>
+			</div><!--.box shadow-->
 			</article>
 
-		
-		<footer>
-			<p>(★フッターです)</p>
-		</footer>
+			<?php require 'footer.php' ; ?>
 		</div><!--#wrap-->
-	</body>
+	</body>	
 </html>

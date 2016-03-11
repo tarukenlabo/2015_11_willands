@@ -2,12 +2,12 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<link rel="stylesheet" href="./style_oocss2.css" type="text/css">
 		<link rel="stylesheet" href="./style_oocss.css" type="text/css">
 		<title>たるナビ -Tabi-Route Navigation-</title>
 	</head>
 	<body>
-		<div id="container" class="align-center">
+		<div id="container">
 			<header>
 				<div class="header_bar">
 				</div>

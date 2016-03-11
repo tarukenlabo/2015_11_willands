@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$u_id = $_SESSION['u_id'];
 
 	require_once("./user.php");
 	require_once("./post.php");
@@ -11,6 +12,7 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/post_style.css">
 	<title>マイページ</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
 
 			<h3><?php echo $u_info['U_NAME'] ; ?>さんの旅行一覧</h3>
 
-			<a href=<?php echo "./trip_flame.php?u_id=" . $u_info['U_ID']; ?>>
+			<a href=<?php echo "./trip_flame.php?u_id=" . $u_id; ?>>
 			<p>新しい旅行記を作成</p>
 			</a>
 
@@ -49,7 +51,7 @@
 				<?php foreach($stmt as $post): ?>
 				<div>
 					<div>
-						<a href=<?php echo "./trip_form.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
+						<a href=<?php echo "./trip_form.php?p_id=" . $post['P_ID']; ?>>
 						<div>
 						<p><img src=<?php echo $post['P_EYE']; ?> alt=<?php echo $post['P_EYE']; ?>></p>
 						</div>
@@ -62,7 +64,7 @@
 						</a>
 						<div>
 							<p><?php 
-								if ($post['P_OFLAG'] = 1){
+								if ($post['P_OFLAG'] == 0){
 									echo "公開";
 								} else {
 									echo "非公開";
@@ -72,7 +74,7 @@
 					</div>
 
 					<div>
-					<a href=<?php echo "./check-in.php?u_id=" . $post['U_ID'] ."&p_id=" . $post['P_ID']; ?>>
+					<a href=<?php echo "./check-in.php?p_id=".$post['P_ID']; ?>>
 					<p>ポイントチェック</p>
 					</a>
 

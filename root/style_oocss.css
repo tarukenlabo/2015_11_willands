@@ -1,10 +1,18 @@
 @charset="UTF-8";
-/*検索バー*/
+/*------------検索バー  ----------*/
+
+
 
 .search_form{
 	position: absolute;
-	left: 480px;
+	left: 37%;
 	top: 300px;
+}
+
+.tarunavi_logo{
+	position: absolute;
+	left: 40%;
+	top: 200px;
 }
 
 dl.search{
@@ -18,7 +26,7 @@ dl.search{
     border-radius:6px;
 }
 dl.search dt{
-    margin-right:40px;
+    margin-right:100px;
     padding:8px 0 8px 8px;
 }
 dl.search dt input{
@@ -35,7 +43,7 @@ dl.search dd{
 }
 dl.search dd button{
     display:block;
-    padding:10px;
+    padding:11px;
     background: #f18e00;
     border:none;
 }
@@ -47,6 +55,8 @@ dl.search dd button span{
 }
 
 /*検索バー終了*/
+
+
 
 
 body{
@@ -61,10 +71,6 @@ body{
 header{
 }
 
-nav{
-	height : 100px;
-
-}
 
 article{
 	width : 960px;
@@ -73,11 +79,71 @@ article{
 }
 
 footer{
+	width: 960px;
+	height: 120px;
+	background: orange;
+}
 
+/*--------ナビゲーションボタン------------*/
+.nav_box{
+	width: 960px;
+	height: 120px;
+	background: white;
+}
+
+.margin-none{
+	margin :0;
+}
+.nav_button{
+	width:480px;
+	height: 120px;
+	background: yellow;
+}
+
+.list-margin{
+	margin: 0;
+}
+
+.nav_box > ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 
+
+.category{
+	padding: 28px 10px 5px 0;
+}
+
+.fotter_logo{
+	margin: 20px 20px;
+}
+
+
+.footer_nav{
+	margin: 90px 50px 0 50px;
+}
+
+.footer_nav > li{
+	list-style: none;
+	float: left;
+	
+}
+
+a{
+	text-decoration: none;
+	display: block;
+	float: left;
+}
+
+
+
 /*----common----*/
+.clearFix{
+	clear :both;
+}
 
 .clearFix:after{
 	clear:both;
@@ -109,9 +175,18 @@ footer{
 
 .button{
 	width :80px;
-	height:30px;
+	height:40px;
 	border-radius : 5px;
+	border :1px solid #222;
+}
 
+.p-button{
+	width :80px;
+	height:30px;
+	margin:10px;
+	border-radius : 5px;
+	border :none;
+	background-color: #FF6C77;
 }
 
 .check-in{
@@ -135,7 +210,15 @@ footer{
 	box-sizing : border-box;
 	padding : 10px;
 }
-
+.long-form{
+	width :600px;
+}
+.middle-form{
+	width :450px;
+}
+.short-form{
+	width :500px;
+}
 
 .box-line1{
 	width:260px;
@@ -146,8 +229,9 @@ footer{
 }
 
 .box-line4{
-	width:;
-	height:;
+	width:80%;
+	height:160px;
+	margin :10px;
 	border-radius:5px;
 	box-sizing : border-box;
 }
@@ -174,6 +258,24 @@ footer{
 	margin : 5px;
 	border :1px solid #222;
 }
+
+
+
+.form-detail2{
+	width : 600px;
+}
+
+
+.text-box{
+	width : 80%;
+}
+/*地図*/
+
+.map{
+	width : 90%;
+	height : 200px;
+}
+
 /*
 配置
 */
@@ -264,6 +366,7 @@ footer{
 	font-size :1.5em;
 	color :#222;
 	line-height : 1.5em;
+	margin : 0 ;
 }
 .other-title{
 	margin : 0;

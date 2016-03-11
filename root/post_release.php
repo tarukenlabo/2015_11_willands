@@ -6,7 +6,8 @@
 	session_start();
 	
 	
-	$p_id = 2;
+	$p_id = $_GET['p_id'];
+	$upload_file_path = $_SESSION['photo_path'];
 	
 	//データベース設定
 	$db = new cls_db();
@@ -28,7 +29,7 @@
 	$comment = h($post_data["comment"]);
 
 
-	$stmt = $dbh->prepare("UPDATE post SET P_CAT = :cate, P_TITLE = :title, P_AWORD = :comment, P_PEAPLE = :peaple, P_PRICE = :price, P_SDAY = :sday, P_FDAY = :fday, P_OFLAG = :flag WHERE P_ID = '".$p_id."'");
+	$stmt = $dbh->prepare("UPDATE post SET P_CAT = :cate, P_TITLE = :title, P_AWORD = :comment, P_PEAPLE = :peaple, P_PRICE = :price, P_SDAY = :sday, P_FDAY = :fday, P_OFLAG = :flag, P_EYE = :photo WHERE P_ID = '".$p_id."'");
 	$stmt->execute(array(
 		'cate'=>$cate,
 		'title'=>$title,
@@ -37,7 +38,8 @@
 		'price'=>$price,
 		'sday'=>$sday,
 		'fday'=>$fday,
-		'flag'=>0
+		'flag'=>0,
+		'photo'=>$upload_file_path
 	));
 	
 	header("Location:trip-form_comp.php");

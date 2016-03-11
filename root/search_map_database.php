@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	require_once("./db_connect.php");
 	
@@ -9,8 +9,8 @@
 	
 	
 	//緯度・経度保存変数
-	$ido = 44.381911;
-	$keido = 126.133374;
+	$ido = -0.519151;
+	$keido =  166.946506;
 	
 	
 	$url = "http://maps.google.com/maps/api/geocode/json?latlng=".$ido.",".$keido."&sensor=false";
