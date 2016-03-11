@@ -1,87 +1,60 @@
-<?php
-	session_start();
+﻿<?php
+	require_once("./db_connect.php");
+	
+	//インデックスからのデータ　デフォルトセット
+	$map = "地域名";
+	$category = "カテゴリ";
+	$search_word = "検索ワード";
+	
+	if( isset($_GET["map"]) )
+		$map = $_GET["map"];
+	
+	if( isset($_GET["cate"]) )
+		$category = $_GET["cate"];
 
-	require_once("./post.php");
-	require_once('./get_cate.php');
-
-
+	if( isset($_GET["search_word"]) )
+		$search_word = $_GET["search_word"];
+		
+	//データベース接続
+	$db = new cls_db();
+	$dbh = $db->db_connect();
+	$dbh -> query( "SET NAMES utf8" );
+	
+	//カテゴリ取得SQL
+	$cat_sql = "SELECT * FROM cate";
+	$stmt = $dbh -> prepare( $cat_sql );
+	$stmt -> execute(); 
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>result.php</title>
-    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-	<script src="./js/result.js"></script>
-</head>
-<body>
-
-	<div>
-		<h1>たるナビ</h1>
-
-	</div>
-
-	<div>
-
-		<div>
-<!--
-検索条件
--->
-			<div>
-				<tr>
-					<th>場所</th>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<th>カテゴリ</th>
-					<td>
-						<?php
-							$cate = array();
-							$cate = get_cate();
-						?>
-						<select name="cate">
-							<?php foreach($cate as $val): ?>
-								<?php $cate_id = $val['CATE_ID']; ?>
-								<option value="<?php echo $cate_id; ?>" ><?php echo $val['CATE_NAME'];?></option>
-							<?php endforeach; ?>
-						</select>
-						<button id="search_by_cate">検索</button>
-					</td>
-				</tr>
-				<tr>
-					<th>キーワード</th>
-					<td>
-						<textarea name="keyword"></textarea>
-						<button id="search_by_keword">検索</button>
-					</td>
-				</tr>
-
-			</div>
-
-		</div>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+		<script src="./js/result.js" type="text/javascript"></script>
 		
-		<div>
-<!--
-写真一覧
--->
-		<?php echo "写真一覧、最上段";?>
-
-
-		<div class="result_list">
-		</div>
-
-		<?php echo "写真一覧、最下段";?>
-
-		</div>
-
-		<div>
-<!--
-地図指定
--->
-		</div>
+		<title>検索結果</title>
+	</head>
 	
-	</div>
-
-</body>
+	<body>
+		<h1>トップページから結果表示</h1>
+		<form>
+			<ul>
+				<li><input type="text" value="<?php echo $map; ?>"></li>
+				<li><input id="cate-box" name="cate_text" type="text" value="<?php echo $category; ?>"></li>
+				<li><input type="text" value="<?php echo $search_word; ?>"><button>検索</button></li>
+			</ul>
+		</form>
+		<ul>
+			<?php while( $result = $stmt -> fetch( PDO::FETCH_ASSOC ) ): ?>
+			<li><a class="cate-link" href="cat_<?php echo $result["CATE_ID"] ?>"><?php echo $result["CATE_NAME"] ?></a></li>
+			<?php endwhile; ?>
+		</ul>
+		<div class="ex"></div>
+		<!-- 以下、地図領域 -->
+		<?php if( !isset( $_GET["map"] ) ): ?>
+		<div>
+			<h2>地図領域</h2>
+		</div>
+		<?php endif; ?>
+	</body>
 </html>
