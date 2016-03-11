@@ -238,6 +238,6 @@
 		</div>
 		<div  id="map_canvas" style="width:70%;height:600px;margin:0 auto;"></div>
 		
-		<a href=""><p>コメントを投稿する</p></a>
+		<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
 	</body>
 </html>
