@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
-		<link rel="stylesheet" href="./css/style.css" type="text/css">
-		<title>会員登録</title>
-	<head>
-	<body>
-		<div id="wrap" class="align-center orange">
+
 			<?php require 'header.php' ; ?>
 
 			<nav>
@@ -23,7 +14,7 @@
 		
 			<div class="box shadow">
 
-				<form method="post" action="regist.php">
+				<form method="post" action="member_comp.php">
 					<input type="hidden" name="mode" value="regist_confirm">
 						
 						<p class="other-title"><input type="button" value="必 須" class="p-button" disabled>メールアドレス</p>
@@ -41,6 +32,3 @@
 			</article>
 
 			<?php require 'footer.php' ; ?>
-		</div><!--#wrap-->
-	</body>	
-</html>
