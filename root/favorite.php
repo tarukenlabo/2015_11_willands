@@ -43,6 +43,7 @@
 			<div class="bkm_posts">
 				<a href="article.php?P_ID=<?php echo $result['P_ID']; ?>"><img src="<?php echo $result['P_EYE']; ?>">
 				<h3><?php echo $result["P_TITLE"]; ?></h3></a>
+				<button onClick="location.href='./bkm_delete.php?p_id=<?php echo $n; ?>'">ブックマーク解除</button>
 			</div>
 		<?php endforeach;
 	 endforeach; ?>
