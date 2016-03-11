@@ -1,47 +1,32 @@
-$(function(){
-
+﻿$(function(){
+	//カテゴリ操作
+	$('.cate-link').click(function(){
+		//カテゴリをテキストボックスへ
+		var catText = $(this).text();
+		$('#cate-box').val( catText );
+		dataRegister();
+		return false;
+	});
 	
-	$('#search_by_keword').click(function(){
-
-		var keyword = "桜　花"
-
-
-		$.ajax({
-			type:'POST',
-			url:'./result_by_keyword.php',
-			data:{
-				keyword:keyword
-			},
-			success:function(data){
-				$('.result_list').html(data);
-			},
-			error:function(data){
-				$('.result_list').text('記事の検索に失敗しました');
-			}
-
-		});
-	});
-
-	$('#search_by_cate').click(function(){
-
-		var p_cat = 1
-
-
-		$.ajax({
-			type:'POST',
-			url:'./result_by_cate.php',
-			data:{
-				p_cat:p_cat
-			},
-			success:function(data){
-				$('.result_list').html(data);
-			},
-			error:function(data){
-				$('.result_list').text('記事の検索に失敗しました');
-			}
-
-		});
-	});
-
-
+	//データ操作
+	
 });
+
+//データ操作関数
+
+function dataRegister(){
+	$.ajax({
+		url: './regist.php',
+		type: 'POST',
+		cache: false,
+		data: {
+			'search_text': 'test',
+		},
+	}).done(function(data, textStatus, jqXHR){
+		alert("success!");
+		$(".ex").html(data);
+	}).fail(function(data, textStatus, errorThrown){
+		alert(textStatus); //エラー情報を表示
+		console.log(errorThrown.message); //例外情報を表示
+	});//.always(function(data, textStatus, returnedObject);
+}

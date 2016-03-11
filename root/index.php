@@ -15,7 +15,7 @@
 	$pup_stmt -> execute();
 	
 	//最新投稿
-	$np_select_sql = "SELECT post.P_ID,post.P_TITLE,post.P_EYE,cnt_tb.cnt FROM post LEFT JOIN ( SELECT P_ID, COUNT( P_ID ) AS cnt FROM bookmark GROUP BY P_ID) AS cnt_tb ON post.P_ID = cnt_tb.P_ID ORDER BY post.P_ID DESC";
+	$np_select_sql = "SELECT post.P_ID,post.P_TITLE,post.P_EYE,cnt_tb.cnt FROM post LEFT JOIN ( SELECT P_ID, COUNT( P_ID ) AS cnt FROM bookmark GROUP BY P_ID) AS cnt_tb ON post.P_ID = cnt_tb.P_ID WHERE P_OFLAG = 0 ORDER BY post.P_ID DESC";
 	$np_stmt = $dbh -> prepare( $np_select_sql );
 	$np_stmt -> execute();
 	
