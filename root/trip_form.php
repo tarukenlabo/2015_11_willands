@@ -77,11 +77,17 @@
 	
 	
 ?>
+
+<!-- デザイン班のheader.phpと共通する<head>部分　ここから -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./css/post_style.css">
+	<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+	<title>たるナビ -Tabi-Route Navigation-</title>
+<!-- デザイン班のheader.phpと共通する<head>部分　ここまで -->
+
+	<link rel="stylesheet" href="./css/lightbox.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="./js/edit_post.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -188,34 +194,57 @@
 	 
 	window.onload = initialize;
 </script>
-	
 
 </head>
 <body>
+	<!-- デザイン班のheader.phpと共通する<body>部分　ここから -->
+	<div id="container" class="align-center">
+		<header>
+			<div class="header_bar">
+			</div>
+
+			
+			<div class="search">
+				
+				<form action="/" name="search" method="get" class="search_form">
+				<dl class="search">
+				<dt><input type="text" name="search" value="" placeholder="検索" /></dt>
+				<dd><button><span></span></button></dd>
+				</dl>
+				</form>
+				
+				<img src="./img/sea.jpg">
+				<div class="tarunavi_logo">
+				<img src="./img/tarunavi_logo.png" >
+				</div>
+			</div>
+		</header>
+	<!-- デザイン班のheader.phpと共通する<body>部分　ここまで -->
+<article class="skyblue">
 	<div id="wrap">
-		<div class="title">
+		<div class="contents-title align-c ">
 		<form action="./trip-form_mod.php?p_id=<?php echo $post_id; ?>" method="post" enctype="multipart/form-data">
-			<p>投稿タイトルを入力</p>
-			<input type="text" name="title" value="<?php echo $title; ?>">
+			<p class="article-title">投稿タイトルを入力</p>
+			<input class="box-line2 type="text" name="title" value="<?php echo $title; ?>">
 		</div>
 		
-		<div class="post_detail">
-			<div class="post_img">
+		<div class="form-detail clearFix">
+			<div class="post_img l-float large-photo white">
 				<img src="<?php echo $img_src; ?>">
 				<input type="file" name="uPhoto" value="写真選択">
 			</div>
 			
-			<div class="post_detail2">
+			<div class="form-detail2 r-float">
 				<table>
 					<tr>
-						<th>投稿者名</th>
+						<th width="200px"><p class="">投稿者名</p></th>
 						<td><?php echo $u_name; ?></td>
 					</tr>
 		
 					<tr>
-						<th>投稿テーマ</th>
+						<th><p class="">投稿テーマ</p></th>
 						<td>
-							<select name="cate">
+							<select name="cate" class="box-line1">
 								<?php foreach($cate as $val): 
 									$cate_id = $val['CATE_ID'];
 								?>
@@ -226,32 +255,31 @@
 					</tr>
 					
 					<tr>
-						<th>人数</th>
-						<td><input type="number" name="peaple" value="<?php echo $peaple; ?>"></td>
+						<th><p class="">人数</p></th>
+						<td><input class="box-line1" type="number" name="peaple" value="<?php echo $peaple; ?>"></td>
 					</tr>
 					
 					<tr>
-						<th>金額</th>
-						<td><input type="number" name="price" value="<?php echo $price; ?>"></td>
+						<th><p class="">金額</p></th>
+						<td><input class="box-line1" type="number" name="price" value="<?php echo $price; ?>"></td>
 					</tr>
 					
 					<tr>
-						<th>日数</th>
-						<td><input type="date" name="sday" value="<?php echo $sday; ?>">&nbsp～&nbsp<input type="date" name="fday" value="<?php echo $fday; ?>"></td>
+						<th><p class="">日数</p></th>
+						<td><input class="box-line1" type="date" name="sday" value="<?php echo $sday; ?>">&nbsp～&nbsp<input type="date" name="fday" value="<?php echo $fday; ?>"></td>
 					</tr>
-					
-					<tr>
-						<th>記事全体コメント</th>
-						<td><textarea name="comment" cols="100" rows="10"><?php echo $p_comment; ?></textarea></td>
-					</tr>
-
-					
 				</table>
+			</div>  <!--post_detail2-->
+			<div class="clearFix align-center text-box">
+				<p class="other-text ">記事全体コメント</p>
+				<textarea class="box-line4" name="comment" cols="100" rows="10"><?php echo $p_comment; ?></textarea></td>
 			</div>
-			<input id="post_edit_btn" type="submit" value="確認画面へ">
-		</form>
+		</div> <!--post_detail-->
+
+<!--		<input id="post_edit_btn" type="submit" value="確認画面へ">
+		</form>  -->
 			
-			<div id="checkins">
+			<div id="checkins" class="box-frame shadow white ">
 				<?php foreach($posts as $checks):
 					$c_id = $checks['C_ID'];
 					$p_id = $checks['P_ID'];
@@ -269,14 +297,44 @@
 								foreach($posts as $photo): ?>
 									<div class="photo"><img src="<?php echo $photo['C_PHOTO']; ?>"></div>
 								<?php endforeach; ?>
-						<button id="<?php echo $c_id; ?>" class="edit_button">編集</button>
+						<button id="<?php echo $c_id; ?>" class="edit_button" onclick="return false;">編集</button>
 						</div>
 				<?php endforeach; ?>
-			</div>
+			</div> <!--checkins-->
+
+<!--	<div  id="map_canvas" style="width:90%;height:600px;"></div> -->
+		<div  id="map_canvas" class="map box-frame shadow white "></div>
+
+			<input id="post_edit_btn" type="submit" value="確認画面へ">
+		</form>
+
+	</div> <!-- #wrap -->
+</article>
+<!-- デザイン班のfooter.phpと共通する部分　ここから -->
+			<footer class="clearFix">
+				<div class="fotter_logo l-float white">
+					<img src="./img/tarunavi_logo.png" >
+					
+					<div class="r-float">
+						<ul class="">
+							<li class="l-float margin10"><a class="foot-text" href="#">たるナビトップ</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">ログイン</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">会員登録</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">利用規約</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">プライバシーポリシー</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">ご利用ガイド</a></li>
+							<li class="l-float margin10"><a class="foot-text" href="#">お問い合わせ</a></li>
+						</ul>
+						<div class="foot-anime foot-anime2">
+							<img src="./img/l_019.png" width="100">
+						</div>
+					</div>
+					
+				</div>
+				
+					
+			</footer>
 		</div>
-		
-		
-	<div  id="map_canvas" style="width:90%;height:600px;"></div>
-	</div>
-</body>
+	</body>	
 </html>
+<!-- デザイン班のfooter.phpと共通する部分　ここまで -->
