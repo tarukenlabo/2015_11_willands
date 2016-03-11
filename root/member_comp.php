@@ -62,8 +62,10 @@ if (!isset($_POST["submit"])) {
 	$stmt -> execute();
 	// 返り値を配列に格納
 	$Uid = $stmt -> fetch(PDO::FETCH_ASSOC);
+	
 	// SESSION変数にU_IDを引き渡しておく
-	$_SESSION['u_id'] = $Uid;
+	$_SESSION['u_id'] = $Uid['U_ID'];
+
 	// u_infoテーブルにU_IDを新規登録
 	$putUid = "INSERT INTO u_info (U_ID) VALUES ($Uid[U_ID])";
 	$stmt = $dbh -> prepare( $putUid );
