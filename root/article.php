@@ -73,6 +73,10 @@
 		$posiy = $args[0]['C_POSIY'];		
 	}
 
+	//コメント取得
+	$get_comment = "SELECT u_auth.U_NAME,user_post_comment.P_ID,user_post_comment.UP_COMMENT FROM user_post_comment JOIN u_auth ON user_post_comment.U_ID = u_auth.U_ID WHERE P_ID =".$p_id;
+	$gcome = $dbh->prepare($get_comment);
+	$gcome->execute();
 
 
 ?>
@@ -238,6 +242,20 @@
 		</div>
 		<div  id="map_canvas" style="width:70%;height:600px;margin:0 auto;"></div>
 		
+		<div class="comments">
+			<p>記事コメント</p>
+			<?php foreach($gcome as $come): ?>
+				<div class="come">
+					<table border="1">
+						<tr>
+							<th><?php echo $come["U_NAME"]; ?></th>
+							<td><?php echo $come["UP_COMMENT"]; ?></td>
+						</tr>
+					</table>
+				</div>
+			<?php endforeach; ?>
+		</div>
+
 		<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
 	</body>
 </html>
