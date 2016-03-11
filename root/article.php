@@ -223,9 +223,11 @@
 			</tr>
 		<table>
 		
+		<?php if(empty($u_id)): ?>
 		
-		<button class="bkm" onClick="location.href='./bkm.php?p_id=<?php echo $p_id; ?>'">お気に入り</button>
-		
+		<?php else: ?>
+			<button class="bkm" onClick="location.href='./bkm.php?p_id=<?php echo $p_id; ?>'">お気に入り</button>
+		<?php endif; ?>
 		
 		<div class="check">
 			<?php foreach($get_checks as $check): ?>
