@@ -75,7 +75,6 @@
 			</nav>
 			
 			<article>
-<<<<<<< HEAD
 				<!-- ピックアップ本文 -->
 				<?php while( $result = $pu_stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
 				<h2><?php echo $result["P_TITLE"]; ?></h2>
@@ -98,16 +97,11 @@
 				<p><img src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真"><?php echo $result["P_EYE"] ?></p>
 				<p><a href="./article.php?P_ID=<?php echo $result["P_ID"] ?>">アーティクルページへ</a></p>
 				<?php endwhile; ?>
-=======
 				<p>(★メインコンテンツです)</p>
 				<div class="">
 					
 					
 				</div>
-<<<<<<< HEAD
->>>>>>> c485497676182962970fe24f7a68e6ac45f261db
-=======
->>>>>>> 209bf335e714084519f27ebfbcf98c5767064b1a
 			</article>
 			
 			<footer class="l-float">
