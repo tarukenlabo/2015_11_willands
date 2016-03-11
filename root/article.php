@@ -71,7 +71,10 @@
 		$posiy = $args[0]['C_POSIY'];		
 	}
 
-
+	//コメント取得
+	$get_comment = "SELECT u_auth.U_NAME,user_post_comment.P_ID,user_post_comment.UP_COMMENT FROM user_post_comment JOIN u_auth ON user_post_comment.U_ID = u_auth.U_ID WHERE P_ID =".$p_id;
+	$gcome = $dbh->prepare($get_comment);
+	$gcome->execute();
 
 ?>
 
@@ -92,7 +95,7 @@
 		
 		</div>
 		
-		<div class="title_box">
+		<div class="title_box align-center">
 			<div class="l-float show_img">
 			<img class="main_article_image" src="<?php echo $img_src; ?>">
 			</div>
@@ -153,18 +156,29 @@
 		</div>
 		<div  id="map_canvas" style="width:70%;height:600px;margin:0 auto;"></div>
 		
-	<div class="comments">
-			<p>記事コメント</p>
-			<?php foreach($gcome as $come): ?>
-				<div class="come">
-					<table border="1">
-						<tr>
-							<th><?php echo $come["U_NAME"]; ?></th>
-							<td><?php echo $come["UP_COMMENT"]; ?></td>
-						</tr>
-					</table>
-				</div>
-			<?php endforeach; ?>
+	
+	<div class="comment_box box-frame align-center">
+		<div class="contributor_comment box-frame" style="border: 2px solid orange">
+			<h2>投稿者コメント</h2>
+			<p><?php echo $p_comment; ?></p>
+		</div>
+	<div class="comments viewers_comment box-frame" style="border: 2px solid orange">
+			<h2>閲覧者のコメント</h2>
+			<?php if(empty($gcome)):?>
+				<p>コメントがありません</p>
+				<?php else: ?>
+				<?php foreach($gcome as $come): ?>
+					<div class="come" style="margin:0 auto;">
+						<table>
+							<tr>
+								<th><?php echo $come["U_NAME"]; ?></th>
+								<td><?php echo $come["UP_COMMENT"]; ?></td>
+							</tr>
+						</table>
+					</div>
+				<?php endforeach; ?>
+				<?php endif; ?>
+			
 		</div>
 		
 		<?php if(empty($u_id)): ?>
