@@ -18,14 +18,15 @@
 	$dbh->query('SET NAMES utf8');
 	
 	//旅行のしおり（大枠）の登録
-	$sql = "INSERT INTO post(U_ID,P_CAT,P_TITLE,P_SDAY,P_OFLAG) VALUES(:u_id,:cate,:title,:sday,:flag)";
+	$sql = "INSERT INTO post(U_ID,P_CAT,P_TITLE,P_SDAY,P_OFLAG,P_EYE) VALUES(:u_id,:cate,:title,:sday,:flag,:peye)";
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute(array(
 		'u_id'=>$u_id,
 		'cate'=>$cate,
 		'title'=>$title,
 		'sday'=>$sday,
-		'flag'=>$flag
+		'flag'=>$flag,
+		'peye'=>'./photo/no_image.png'
 	));
 	
 	header("Location:member_page.php");
