@@ -1,3 +1,11 @@
+<style>
+a {
+	text-decoration:none;
+	display:block;
+	font-size:20px;
+	line-height:25px;
+}
+</style>
 <?php
 	require_once("./db_connect.php");
 	
@@ -13,9 +21,9 @@
 		$stmt->execute();
 		
 		foreach($stmt as $post):?>
-			<li><?php echo $post['CATE_ID']."　".$post['CATE_NAME'] ?></li>
+			<a href="./result.php?cate=<?php echo $post['CATE_ID']; ?>"><li><?php echo $post['CATE_NAME'] ?></li></a>
 		<?php endforeach;
 	}
 	
 	
-	get_cate();
+	//get_cate();
