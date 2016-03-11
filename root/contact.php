@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./style.css" type="text/css">
-	<link rel="stylesheet" href="./style_oocss.css" type="text/css">
-	<title>お問い合わせ</title>
-</head>
-<body>
-		<div id="wrap" class="align-center orange">
+
 			<?php require 'header.php' ; ?>
 
 			<nav>
 			</nav>
 			
+		<body>
 		<article class="hadairo">
 
 		<div class="form_box align-c">

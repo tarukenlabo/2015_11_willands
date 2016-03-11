@@ -1,28 +1,18 @@
 <?php
 	if ( !isset($_POST["submit"]) ) {
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>お問い合わせエラー</title>
-</head>
+
+<?php require 'header.php' ; ?>
+
 <body>
-	<div id="wrap" class="align-center orange">
-			<?php require 'header.php' ; ?>
-
-			<nav>
-			</nav>
-			
-		<article class="hadairo">
-
-		<div class="form_box">
+	<article class="hadairo">
+	<div class="form_box align-c">
+	
 	<h1 class="">このページは直接アクセスできません。</h1>
 	<p>お手数ですが<a href="./contact.php">お問い合わせ入力ページ</a>にお戻りください。</p>
-		</div>
-	</article>
-	</div>
 	
+	</div>
+	</article>
 </body>
 </html>
 <?php
@@ -64,23 +54,14 @@ EOD;
 		}
 	}
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title>お問い合わせ完了</title>
-</head>
+
+<?php require 'header.php' ; ?>
+
 <body>
 
-	<div id="wrap" class="align-center orange">
-			<?php require 'header.php' ; ?>
-
-			<nav>
-			</nav>
-			
-		<article class="hadairo">
-
-		<div class="form_box align-c">
+	<article class="hadairo">
+	<div class="form_box align-c">
+	
 	<h1>お問い合わせ</h1>
 	<p>
 		送信完了しました♪<br>
@@ -92,6 +73,5 @@ EOD;
 	
 	</div>
 	</article>
-	</div>
 </body>
 </html>
