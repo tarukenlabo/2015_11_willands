@@ -49,27 +49,60 @@
 
 ?>
 
-<DOCTYPE html>
-<html lang=="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>プロフィール</title>
-	</head>
-	
-	<body>
-	<form action="./profile_comp.php" method="post" enctype="multipart/form-data">
-		<p>名前　<?php echo $name; ?></p>
-		<p>年齢　<?php echo $age; ?></p>
-		<p>性別　<?php 
-					if($sex == 1){
-						echo '男性';
-					}else{
-						echo '女性';
-					} ?></p>
-		<p>自己紹介 <?php echo $self; ?></p>
-		<p>アイコン<?php echo $thumb["name"]; ?></p>
-		<input type="submit" value="これで登録"> 
-	</form>
+<?php
+	// 共通のヘッダー部分の読み込み
+	require 'header.php';
+?>
+<!-- // navigation部分になる予定
+			<nav>
+			</nav>
+-->
 
-	</body>
-<html>
+	<article class="hadairo">
+		<div class="form_box">
+			<h1 class="align-c">プロフィール</h1>
+			<form action="./profile_comp.php" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="mode" value="query_confirm">
+				<table>
+				  <tr>
+				    <th class="">名前</th>
+				    <td><b><?php echo $name; ?></b></td>
+				  </tr>
+				  <tr>
+				    <th class="">年齢</th>
+				    <td><b><?php echo $age; ?></b></td>
+				  </tr>
+				  <tr>
+				    <th class="">性別</th>
+				    <td><b>
+						<?php
+							if($sex == 1){
+								echo '男性';
+							} elseif($sex == 2){
+								echo '女性';
+							} ?>
+					</b></td>
+				  </tr>
+				  <tr>
+				    <th class="">自己紹介</th>
+				    <td><b><?php echo $self; ?></b></td>
+				  <tr>
+				    <th class="">サムネイル</th>
+					<td><b><img src="<?php echo $thumb['tmp_name']; ?>"></b></td>
+				    <td><b><?php echo $thumb["name"]; ?></b></td>
+				  </tr>
+				</table>
+				<div>
+					<p>
+						<a href="javascript:history.back()"><input type="button" name="return" value=" 編集に戻る "></a>
+						<input type="submit" value="これで登録"> 
+					</p>
+				</div>
+			</form>
+		</div>
+	</article>
+
+<?php
+	// 共通のフッター部分の読み込み
+	require 'footer.php';
+?>
