@@ -4,15 +4,12 @@
 	//入力フォームからパラメータを取得
 	$user_data = $_SESSION["user_data"];
 
-var_dump($user_data);
-
 	$u_id = $_SESSION["u_id"];
 	$name = $user_data["name"];
 	$age = $user_data["age"];
 	$sex = $user_data["sex"];
 	$self = $user_data["self"];
 	$thumb = $_SESSION["thumb_path"];
-
 	
 	//データベース接続設定
 	require_once("./db_connect.php");

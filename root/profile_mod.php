@@ -18,7 +18,12 @@
 	$age = $_POST["age"];
 	$sex = $_POST["sex"];
 	$self = $_POST["self"];
-	$thumb = ( $_FILES["thumb"] );
+
+	if (!is_null($_FILES["thumb"])){
+		$thumb = ( $_FILES["thumb"] );
+	}else {
+		$thumb = $_POST["thumb_now"];
+	}
 
 	/////////////////
 	//アイコン取込処理
@@ -88,8 +93,11 @@
 				    <td><b><?php echo $self; ?></b></td>
 				  <tr>
 				    <th class="">サムネイル</th>
-					<td><b><img src="<?php echo $thumb['tmp_name']; ?>"></b></td>
 				    <td><b><?php echo $thumb["name"]; ?></b></td>
+				  </tr>
+				  <tr>
+				    <th class=""></th>
+					<td><b><img src="<?php echo $upload_file_path; ?>"></b></td>
 				  </tr>
 				</table>
 				<div>

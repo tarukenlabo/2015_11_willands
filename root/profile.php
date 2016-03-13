@@ -50,10 +50,15 @@
 					</tr>
 					<tr>
 						<th class="">アイコン</th>
-						<td><input name="thumb" type="file" value="写真選択"><br>
-							<img src="<?php echo $u_thumb; ?>"></td>
+						<td><input name="thumb" type="file" value="写真選択"></td>
+					</tr>
+					<tr>
+						<th class=""></th>
+						<td><img src="<?php echo $u_thumb; ?>"></td>
 					</tr>
 				</table>
+			    <input name="thumb_now" type="hidden" value=<?php echo $u_thumb;?> required></td>
+
 				<input class="check_button"  type="submit" value="確認画面へ">
 			</form>
 		</div>
