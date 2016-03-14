@@ -16,9 +16,14 @@
 	$pup_stmt -> execute();
 	
 	//最新投稿
-	$np_select_sql = "SELECT post.P_ID,post.P_TITLE,post.P_EYE,cnt_tb.cnt FROM post LEFT JOIN ( SELECT P_ID, COUNT( P_ID ) AS cnt FROM bookmark GROUP BY P_ID) AS cnt_tb ON post.P_ID = cnt_tb.P_ID ORDER BY post.P_ID DESC";
+	$np_select_sql = "SELECT post.P_ID,post.P_TITLE,post.P_EYE,cnt_tb.cnt FROM post LEFT JOIN ( SELECT P_ID, COUNT( P_ID ) AS cnt FROM bookmark GROUP BY P_ID) AS cnt_tb ON post.P_ID = cnt_tb.P_ID ORDER BY post.P_ID DESC LIMIT 43";
 	$np_stmt = $dbh -> prepare( $np_select_sql );
 	$np_stmt -> execute();
+	
+	//ピックアップコメント
+	$pup_come_sql="SELECT P_AWORD FROM post WHERE P_ID = (SELECT P_ID FROM bookmark GROUP BY P_ID HAVING COUNT(P_ID) = (SELECT MAX(cnt) FROM ( SELECT P_ID,COUNT( * ) AS cnt FROM bookmark GROUP BY P_ID ) AS cnt_tb))";
+	$pup_come = $dbh -> prepare( $pup_come_sql );
+	$pup_come -> execute();
 	
 ?>
 
@@ -27,6 +32,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
+		<link rel="stylesheet" href="./css/cate_css_style.css" type="text/css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="./js/navi.js"></script>
 		<title>たるナビ -Tabi-Route Navigation-</title>
@@ -60,24 +66,23 @@
 
 			<nav>
 				<ul>
-					
+					<a href="./result.php">
 					<li class="l-float margin-none nav_button">
 							<img src="./img/pointer.png" class="margin10 ">
 							<p class="article-title bold margin-none">地図でさがす</p>
 					</li>
-					
+					</a>
 
-					<li class="r-float margin-none nav_button cate_navi_button">
+					<li class="r-float margin-none nav_button cate_navi_button posi_re">
 							<img src="./img/folder.png" class="margin10">
 							<p class="article-title bold margin-none">カテゴリでさがす</p>
+							<ul>
+								<?php get_cate(); ?>
+							</ul>
 					</li>
 
 				</ul>
 
 			</nav>
-			<div id="cate_navi">
-				<ul>
-					<?php get_cate(); ?>
-				</ul>
-			</div>
+				
 			
