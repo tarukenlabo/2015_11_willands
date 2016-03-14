@@ -10,7 +10,6 @@
 	$sex = $user_data["sex"];
 	$self = $user_data["self"];
 	$thumb = $_SESSION["thumb_path"];
-
 	
 	//データベース接続設定
 	require_once("./db_connect.php");
@@ -47,20 +46,26 @@
 
 ?>
 
-<DOCTYPE html>
-<html lang=="ja">
-	<head>
-		<meta charset="UTF-8">
-			<title></title>
-	</head>
-	
-	<body>
-	<p>投稿完了しました♪</p>
-	<p>ありがとうございます☆</p>
-	<form action="./member_page.php" method="post" enctype="multipart/form-data">
-		<input type="submit" value="マイページへ">
-	</form>
-	</body>
-</html>
+<?php
+	// 共通のヘッダー部分の読み込み
+	require 'header.php';
+?>
+<!-- // navigation部分になる予定
+			<nav>
+			</nav>
+-->
 
+	<article class="hadairo">
+		<div class="form_box">
+		<h1 class="align-c">プロフィール</h1>
+			<p class="align-c">プロフィールの編集が完了しました♪</p>
+			<p class="align-c">
+				<a href="./member_page.php"><input  type="button" name="tomypage" value=" マイページへ "></a>
+			</p>
+		</div>
+	</article>
 
+<?php
+	// 共通フッター要素を読み込み
+	require 'footer.php';
+?>

@@ -3,7 +3,7 @@
 	session_start();
 	
 	require_once("./user.php");
-	require 'header.php';
+
 	$u_info = search_user_by_uid($_SESSION['u_id']);
 
 	$u_name = $u_info['U_NAME'];
@@ -15,46 +15,54 @@
 	
 ?>
 
-<DOCTYPE html>
-<html lang=="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>プロフィール</title>
-	</head>
-	
-	<body>
+<?php
+	// 共通のヘッダー部分の読み込み
+	require 'header.php';
+?>
+<!-- // navigation部分になる予定
+			<nav>
+			</nav>
+-->
+
 	<article class="hadairo">
-	<div class="form_box">
-	<form action="./profile_mod.php" method="post" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td>名前<input name="name" type="text" value=<?php echo $u_name;?>></td>
-			</tr>
-			<tr>
-				<td>年齢<input name="age" type="number" value=<?php echo $u_age;?>></td>
-			</tr>
-			<tr>
-				<td>性別
-				男性<input name="sex" type="radio" value="1" <?php if($u_sex == 1){ print "checked";}?>>
-				女性<input name="sex" type="radio" value="2" <?php if($u_sex == 2){ print "checked";}?>>
-				</td>
-			</tr>
-			<tr>
-				<td>自己紹介<br><textarea name="self"><?php echo $u_comment;?></textarea></td>
-			</tr>
-			<tr>
-				<td>アイコン<input name="thumb" type="file" value="写真選択"></td>
-			<tr>
-				<td><img src="<?php echo $u_thumb; ?>"></td>
-			</tr>
-		  <tr>
-		  	<td><input type="submit" value="確認画面へ"></td>
-		  </tr>
-	</form>
-	</div>
+		<div class="form_box">
+			<h1 class="align-c">プロフィール</h1>
+			<form action="./profile_mod.php" method="post" enctype="multipart/form-data">
+				<table>
+					<tr>
+					    <th class="">名前</th>
+					    <td><input class="box-line1" name="name" type="text" size="30"value=<?php echo $u_name;?> required></td>
+					</tr>
+					<tr>
+					    <th class="">年齢</th>
+					    <td><input class="box-line1" name="age" type="number" value=<?php echo $u_age;?> required></td>
+					</tr>
+					<tr>
+						<th class="">性別</th>
+						<td>
+							男性<input name="sex" type="radio" value="1" <?php if($u_sex == 1){ print "checked";}?>>
+							女性<input name="sex" type="radio" value="2" <?php if($u_sex == 2){ print "checked";}?>>
+						</td>
+					</tr>
+					<tr>
+						<th class="">自己紹介</th>
+						<td><textarea class="box-line1" name="self" size="30"><?php echo $u_comment;?></textarea></td>
+					</tr>
+					<tr>
+						<th class="">アイコン</th>
+						<td><input name="thumb" type="file" value="写真選択"></td>
+					</tr>
+					<tr>
+						<th class=""></th>
+						<td><img src="<?php echo $u_thumb; ?>"></td>
+					</tr>
+				</table>
+			    <input name="thumb_now" type="hidden" value=<?php echo $u_thumb;?> required></td>
+
+				<input class="check_button"  type="submit" value="確認画面へ">
+			</form>
+		</div>
 	</article>
-	</body>
-<html>
 
 <?php
 	// 共通のフッター部分の読み込み
