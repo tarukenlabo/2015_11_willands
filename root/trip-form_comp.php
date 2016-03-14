@@ -27,7 +27,7 @@
 						
 							<p class="other-text align-c"><?php echo "投稿完了しました。"; ?></p>
 							<div class="align-c">
-								<button onClick="location.href='./member.php'" class="button_120 white align-center">マイページヘ</button>
+								<button onClick="location.href='./member_page.php'" class="button_120 white align-center">マイページヘ</button>
 								<button onClick="location.href='./article.php?p_id=<?php echo $post_id; ?>'" class="button_200 white align-center">投稿した記事を見る</button>
 							</div>
 								

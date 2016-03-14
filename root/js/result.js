@@ -20,7 +20,7 @@ function dataRegister(){
 		type: 'POST',
 		cache: false,
 		data: {
-			'search_text': 'test',
+			'search_text': 'ハワイ',
 		},
 	}).done(function(data, textStatus, jqXHR){
 		alert("success!");
