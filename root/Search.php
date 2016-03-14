@@ -13,7 +13,6 @@
 		//コンストラクト
 		public function __construct( $array ){
 			$this -> searchText = $array;
-			echo aaa;
 		}
 		
 		//DB接続
@@ -27,17 +26,42 @@
 
 		}
 		
+		
 		//SQL文分岐
-		private function changeSql( $falg ){
-			if( $this -> elementExists( self::MA ) ){
+		public function changeSql(){
+			if( array_key_exists( "cate",$this -> searchText ) && array_key_exists( "map",$this -> searchText ) && array_key_exists( "search_word",$this -> searchText ) ){
+				//map,cate,search_word SELECT SQL
+				$sqo = "SELECT pupc_tb.P_ID, pupc_tb.P_TITLE, pupc_tb.P_AWORD, pupc_tb.UP_COMMENT, pc.C_TITLE, pc.C_COMMENT FROM post_check_in AS pc RIGHT JOIN ( SELECT p.P_ID, p.P_CAT, p.P_TITLE, p.P_AWORD, upc.UP_COMMENT FROM post AS p LEFT JOIN user_post_comment AS upc ON p.P_ID = upc.P_ID
+) AS pupc_tb ON pc.P_ID = pupc_tb.P_ID WHERE pupc_tb.P_CAT =8 AND pc.M_ID =34";
+				$this -> keywordCreate();
+				$sql = $this -> freewordCreate( $sql );
+
+			}else if( array_key_exists( "cate",$this -> searchText ) && array_key_exists( "search_word",$this -> searchText ) ){
+				//cate,search_word SELECT SQL
+				
+			}else if( array_key_exists( "map",$this -> searchText ) && array_key_exists( "search_word",$this -> searchText ) ){
+				//map,search_word SELECT SQL
+				
+			}else if( array_key_exists( "map",$this -> searchText ) && array_key_exists( "cate",$this -> searchText ) ){
+				//map,cate SELECT SQL
+			
+			}else if( array_key_exists( "map",$this -> searchText ) ){
+				//map SELECT SQL
 				$sql = "SELECT * FROM post AS p INNER JOIN (SELECT P_ID FROM post_check_in WHERE M_ID = ? GROUP BY P_ID) AS map_tb ON p.P_ID = map_tb.P_ID";
-			}else if( $this -> elementExists( self::CATE ) ){
+			
+			}else if( array_key_exists( "cate",$this -> searchText ) ){
+				//cate SELECT SQL
 				$sql = "SELECT * FROM post WHERE P_CAT = ?";
-			}else if( $this -> elementExists( self::SERACH_WORD )){
+		
+			}else if( array_key_exists( "search_word",$this -> searchText ) ){
+				//search_word SELECT SQL
 				$this -> keywordCreate();
 				$sql = "SELECT pupc_tb.P_ID,pupc_tb.P_TITLE,pupc_tb.P_AWORD,pupc_tb.UP_COMMENT,pc.C_TITLE,pc.C_COMMENT FROM post_check_in AS pc RIGHT JOIN (SELECT p.P_ID,p.P_TITLE,p.P_AWORD,upc.UP_COMMENT FROM post AS p LEFT JOIN user_post_comment AS upc ON p.P_ID = upc.P_ID) AS pupc_tb ON pc.P_ID = pupc_tb.P_ID WHERE ";
 				$sql = $this -> freewordCreate( $sql );
+			
 			}
+			
+			return $sql;
 			
 		}
 		
@@ -53,22 +77,16 @@
 				}
 				
 				$this -> keywordArray = $keyword;
-				
-				
 			}
 		}
 		
 		//フリーワード条件作成
 		private function freewordCreate( $sql ){
-			$SQL .= " AND (";
+			$sql .= " CONCAT( pupc_tb.P_ID, pupc_tb.P_TITLE, pupc_tb.P_AWORD ) LIKE ?";
 			for( $i=0; i< count( $this -> keywordArray ); $i++ ){
-				$SQL .= "concat(pupc_tb.P_ID,pupc_tb.P_TITLE,pupc_tb.P_AWORD LIKE,pupc_tb.UP_COMMENT LIKE,pc.C_TITLE LIKE,pupc_tb.UP_COMMENT,pc.C_TITLE,pc.C_COMMENT) LIKE ? AND ";
+				$sql .= " AND CONCAT( pupc_tb.P_ID, pupc_tb.P_TITLE, pupc_tb.P_AWORD ) LIKE ? ";
 			}
-			
-			$SQL = rtrim( $SQL , " AND " );
-			$SQL .= ")";
-			
-			return $SQL;
+			return $sql;
 		}
 		
 		//要素の存在判定
@@ -86,4 +104,9 @@
 			}
 		}
 		
+		//配列のキー取得
+		public function getKeyArray(){
+			$array_key = array_keys( $this -> searchText );
+			return $array_key;
+		}
 	}

@@ -16,7 +16,7 @@
 							<h3 class="recomend-title text-shadow bold"><?php echo $result["P_TITLE"]; ?></h3>
 						</div>
 						<div class="large-large-photo align-center white">
-							<img src="<?php echo $result['P_EYE'] ?>" alt="ピックアップ写真">
+							<img src="<?php echo $result['P_EYE'] ?>" alt="ピックアップ写真" class="large-large-photo_img">
 						</div>
 					</div>
 		<?php endwhile; ?>
@@ -31,7 +31,9 @@
 						<?php endwhile; ?>
 						</div>
 						<div class="shadow box-line3 align-center white">
-						<p class="article-text"><?php echo $result["P_AWORD"]; ?></p>
+							<?php while( $result = $pup_come -> fetch(PDO::FETCH_ASSOC) ): ?>
+								<p class="article-text"><?php echo $result["P_AWORD"]; ?></p>
+							<?php endwhile; ?>
 						</div>
 					</div>
 				</div>
@@ -47,15 +49,15 @@
 		<?php while( $result = $np_stmt -> fetch(PDO::FETCH_ASSOC) ): ?>
 			<?php if($i>3): ?>
 					<a href="./article.php?P_ID=<?php echo $result["P_ID"] ?>" class="clear-text">
-						<div class="box-3 white l-float ">
-							<img class="photo3 white " src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真">
+						<div class="box-4 white l-float ">
+							<img class="photo4 white " src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真">
 							<div class="inline align-l">2days ago</div>
 							<div class="inline align-r"><img src=""><?php echo $result["cnt"] ?></div>
 						</div>
 					</a>
 			<?php else: ?>
 					<a href="./article.php?P_ID=<?php echo $result["P_ID"] ?>" class="clear-text">
-						<div class="box-3 white l-float " style="background:red">
+						<div class="box-3 white l-float ">
 							<img class="photo3 white " src="<?php echo $result["P_EYE"] ?>" alt="ピックアップ写真">
 							<div class="inline align-l">2days ago</div>
 							<div class="inline align-r"><img src=""><?php echo $result["cnt"] ?></div>

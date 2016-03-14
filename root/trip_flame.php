@@ -41,5 +41,6 @@
 		</table>
 		<input type="submit" value="作成">
 	</form>
+
 </body>
 </html>
