@@ -97,9 +97,7 @@
 		
 			<h2><?php echo $title; ?></h2>
 			
-			<?php if(empty($u_id)): ?>
-			
-			<?php else: ?>
+			<?php if(isset($_SESSION['u_id'])): ?>
 				<button class="bkm" onClick="location.href='./bkm.php?p_id=<?php echo $p_id; ?>'">お気に入り</button>
 			<?php endif; ?>
 
@@ -192,9 +190,7 @@
 			
 		</div>
 		
-		<?php if(empty($u_id)): ?>
-			
-		<?php else: ?>
+		<?php if(isset($_SESSION['u_id'])): ?>
 			<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
 		<?php endif; ?>
 
