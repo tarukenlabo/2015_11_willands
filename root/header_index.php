@@ -25,6 +25,8 @@
 	$pup_come = $dbh -> prepare( $pup_come_sql );
 	$pup_come -> execute();
 	
+	session_start();
+	
 ?>
 
 <!DOCTYPE html>
