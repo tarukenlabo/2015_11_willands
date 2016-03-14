@@ -5,17 +5,16 @@
 	
 	//カテゴリサーチ
 	$searchObj = new Search( $_POST );
-	$key_array = $searchObj -> getKeyArray();
+	$sql = $searchObj -> changeSql();
+	$stmt = $searchObj -> selectSql( $sql );
 	
 	echo "<pre>";
-	
-	var_dump( $searchObj -> searchRun( $key_array ) );
-	
+	var_dump( $stmt );
 	echo "</pre>";
 	
-	$stmt = $searchObj -> searchRun( $key_array );
-	foreach( $stmt as $val ){
-		echo "<pre>";
-		var_dump( $val );
-		echo "</pre>";
-	}
+	$result = $stmt -> fetch( PDO::FETCH_ASSOC );
+	
+	echo "<pre>";
+	var_dump( $result );
+	echo "</pre>";
+	
