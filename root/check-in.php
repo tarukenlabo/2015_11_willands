@@ -6,7 +6,7 @@
 		<title>(★各ページタイトル入れてください)</title>
 	<head>
 	<body>
-		
+			<?php include_once("analyticstracking.php") ?>		
 			<?php require 'header.php' ; ?>
 
 			<nav>

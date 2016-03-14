@@ -31,6 +31,7 @@
 		<title>お気に入り記事一覧</title> 
 	<head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="wrap" class="align-center orange">
 			<?php require 'header.php' ; ?>
 

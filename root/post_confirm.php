@@ -34,6 +34,7 @@
 <head>
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="wrap">
 		<table>
 			<tr>

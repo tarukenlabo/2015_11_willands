@@ -7,6 +7,7 @@
 		<title>投稿完了</title>
 	<head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="wrap" class="align-center orange">
 			<?php require 'header.php' ; ?>
 

@@ -10,6 +10,7 @@
 <head>
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<form action="./trip_flame_post.php" method="post">
 		<table>
 			<tr>

@@ -181,6 +181,7 @@
 
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<div id="wrap">
 		<div class="title">
 		<form action="./post_confirm.php" method="post">

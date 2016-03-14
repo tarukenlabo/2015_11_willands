@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./style.css" type="text/css">
 	</head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="wrap" class="align_center orange">
 			<?php require 'header.php' ; ?>
 			<nav>

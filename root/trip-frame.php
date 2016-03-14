@@ -9,6 +9,7 @@
 <?php require 'header.php' ; ?>
 
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="wrap" class="align-center orange">
 
 

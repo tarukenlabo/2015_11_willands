@@ -40,6 +40,7 @@
 		<title>たるナビ -Tabi-Route Navigation-</title>
 	</head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="container" class="align-center orange">
 			<header>
 				<div class="header_bar">

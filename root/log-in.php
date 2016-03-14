@@ -72,6 +72,7 @@ if(!isset($_POST['login'])) {
 		<title>ログインページ</title>
 	<head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="wrap" class="align-center orange">
 			<?php require 'header.php' ; ?>
 
@@ -132,6 +133,7 @@ function error($errorType) {
 <title>ログイン</title>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 <h2 class="contents-title">エラーページ</h2>
 <?php
   print $errorMsg;

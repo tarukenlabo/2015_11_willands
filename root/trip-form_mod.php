@@ -209,6 +209,7 @@
 
 </head>
 <body>
+	<?php include_once("analyticstracking.php") ?>
 	<!-- デザイン班のheader.phpと共通する<body>部分　ここから -->
 	<div id="container" class="align-center">
 		<header>

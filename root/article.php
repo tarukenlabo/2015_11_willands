@@ -87,7 +87,7 @@
 <?php require 'header_map.php' ; ?>
 
 	<body>
-	
+		<?php include_once("analyticstracking.php") ?>
 	
 	<article class="hadairo">
 

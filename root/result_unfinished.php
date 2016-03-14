@@ -36,6 +36,7 @@
 	</head>
 	
 	<body>
+	<?php include_once("analyticstracking.php") ?>
 		<h1>トップページから結果表示</h1>
 		<form>
 			<ul>
