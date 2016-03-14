@@ -1,10 +1,15 @@
 @charset="UTF-8";
-/*検索バー*/
-
+/*------------検索バー  ----------*/
 .search_form{
 	position: absolute;
-	left: 480px;
+	left: 37%;
 	top: 300px;
+}
+
+.tarunavi_logo{
+	position: absolute;
+	left: 40%;
+	top: 200px;
 }
 
 dl.search{
@@ -18,7 +23,7 @@ dl.search{
     border-radius:6px;
 }
 dl.search dt{
-    margin-right:40px;
+    margin-right:100px;
     padding:8px 0 8px 8px;
 }
 dl.search dt input{
@@ -35,7 +40,7 @@ dl.search dd{
 }
 dl.search dd button{
     display:block;
-    padding:10px;
+    padding:11px;
     background: #f18e00;
     border:none;
 }
@@ -48,14 +53,9 @@ dl.search dd button span{
 
 /*検索バー終了*/
 
-#wrap{
+
+#container{
 	width : 960px;
-	
-}
-
-
-body{
-
 }
 
 #wrap{
@@ -66,20 +66,76 @@ body{
 header{
 }
 
-nav{
-	height : 100px;
-
-}
-
 article{
-	width : 900px;
 	width : 960px;
 	padding-top : 10px;
 	padding-bottom : 20px;
 }
 
 footer{
+	width: 920px;
+	background: orange;
+	padding : 20px;
+}
 
+/*--------ナビゲーションボタン------------*/
+
+.margin-none{
+	margin :0;
+}
+.nav_button{
+	width:480px;
+	height: 120px;
+	background: yellow;
+	border : 1px solid white;
+	box-sizing : border-box;
+}
+
+.nav_button :hover{
+	-webkit-transform: scale(1.3);
+}
+
+.list-margin{
+	margin: 0;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+
+/*footer*/
+
+.fotter_logo{
+}
+
+.footer_nav > li{
+	list-style: none;
+	float: left;
+}
+
+.foot-text{
+	text-decoration: none;
+	display: block;
+	float: left;
+	color : green;
+}
+
+
+.foot-anime2{
+	position :absolute;
+	-webkit-animation:move3 15s cubic-bezier(0.9, 0.1, 1.0, 1.0) infinite normal;
+}
+
+@-webkit-keyframes move3{
+    0% {margin-top:40px;
+    margin-left:700px;}
+    100% {margin-top:-100px;
+    margin-left:-300px;
+}
 }
 
 
@@ -88,11 +144,6 @@ footer{
 	clear :both;
 }
 
-.clearFix{
-	clear:both;
-	content:".";
-	display:block;
-	line-height:;
 .clearFix:after{
 	clear:both;
 	content:".";
@@ -127,15 +178,32 @@ footer{
 	border-radius : 5px;
 	border :1px solid #222;
 }
+/*■■■■■■追加しました(3/10 17：15 佐藤)■■■■■■*/
+/*-------↑.button はいらないかも？？---------*/ 
 
-.p-button{
+.button_120{
+	width :120px;
+	height:40px;
+	border-radius : 5px;
+	border :4px solid #FF6C77;
+}
+
+.button_200{
+	width :120px;
+	height:40px;
+	border-radius : 5px;
+	border :4px solid #FF6C77;
+}
+
+.d-button{
 	width :80px;
 	height:30px;
 	margin:10px;
 	border-radius : 5px;
 	border :none;
-	background-color: #FF6C77;
 }
+/*-----↑p-buttonからd-buttonに変更しました -----*/
+/*■■■■■■buttonの変更・追加ここまで■■■■■■*/
 
 .check-in{
 	width:140px;
@@ -147,16 +215,6 @@ footer{
 箱、写真
 */
 
-.box{
-	width :100%;
-	height : 500px;
-	border-radius:5px;
-	box-sizing : border-box;
-}
-
-.text-box-1line{
-	width:700px;
-	height:20px;
 .box-100%{
 	width :100%;
 }
@@ -167,6 +225,18 @@ footer{
 	border-radius:5px;
 	box-sizing : border-box;
 	padding : 10px;
+	margin : 10px auto;
+}
+
+.box-3{
+	width : calc((100% ) / 3);
+	box-sizing : border-box;
+	padding : 5px;
+}
+.box-4{
+	width : calc(100% / 4);
+	padding : 5px;
+	box-sizing : border-box;
 }
 
 
@@ -178,12 +248,130 @@ footer{
 	box-sizing : border-box;
 }
 
-.box-line4{
-	width:80%px;
-	height:160px;
+
+/*佐藤さん編集*/
+.box-line1_80{
+	width:80px;
+	height:40px;
 	margin :10px;
 	border-radius:5px;
 	box-sizing : border-box;
+}
+
+.box-line1_150{
+	width:150px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+.box-line1_300{
+	width:300px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+.box-line1_450{
+	width:450px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+.box-line1_600{
+	width:600px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+/*■■■■■■ boxの変更・追加ここまで ■■■■■■*/
+
+/*-----------------------------------
+			小林編集します
+-------------------------------------*/
+
+/*---旅のタイトルを入力するボックス-----*/
+
+.box-line2{
+	width:650px;
+	height:40px;
+	margin :10px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+
+/*---内容確認ボタン-----*/
+
+.check_button{
+	width :200px;
+	height:40px;
+	border-radius : 5px;
+	border :1px solid #222;
+}
+
+/*---フォームの箱-----*/
+
+.form_box{
+	width:600px;
+	height:500px;
+	margin: 0 auto;
+
+}
+
+
+/*-----------------------------------
+			ここまで小林編集
+-------------------------------------*/
+
+
+
+.box-line3{
+	width:100%;
+	height:100px;
+	padding : 5px;
+	margin :5px;
+	border-radius:5px;
+	box-sizing : border-box;
+}
+.box-line4{
+	width:100%;
+	height:160px;
+	margin :10px;
+	
+	border-radius:5px;
+	box-sizing : border-box;
+	
+}
+
+.photo3{
+	width : 270px;
+	height : 250px;
+	margin-left : 15px ;
+	border-radius : 5px;
+	box-sizing : border-box;
+
+}
+.photo4{
+	width : 200px;
+	height : 190px;
+	margin-left : 10px ;
+	border-radius : 5px;
+	box-sizing : border-box;
+
+}
+
+.small-photo{
+	width:130px;
+	height:130px;
+	margin : 5px;
+	border-radius : 5px;
+	box-sizing : border-box;
+
 }
 
 .large-photo{
@@ -192,6 +380,29 @@ footer{
 	margin : 30px;
 	border-radius:5px;
 	box-sizing : border-box;
+}
+.large-large-photo{
+	width:350px;
+	height:320px;
+	margin : 15px;
+	border-radius:5px;
+	box-sizing : border-box;
+	position : absolute;
+	bottom : 10px;
+	left :15px;
+}
+
+.sub-photo{
+	width:420px;
+	height:280px;
+}
+
+.top-article-detail{
+	width : 50%;
+	min-height : 400px;
+	padding :10px 0;
+	border-radius : 5px;
+	position : relative;
 }
 
 .trip-frame-box{
@@ -213,11 +424,33 @@ footer{
 	width : 600px;
 }
 
+.text-box{
+	width : 80%;
+}
 /*地図*/
 
 .map{
 	width : 90%;
 	height : 200px;
+}
+
+.main-map{
+	width : 600px;
+	height : 600px;
+}
+
+.world-map,
+.world-map img{
+	width : 800px;
+	height : 600px;
+}
+
+#text-change :hover{
+	fill : orange;
+}
+.color-change :hover{
+	fill : orange;
+
 }
 
 /*
@@ -238,6 +471,9 @@ footer{
 .align-r{
 	text-align : right;
 }
+.align-l{
+	text-align : left;
+}
 .align-c{
 	text-align : center;
 }
@@ -250,25 +486,68 @@ footer{
 	margin : 10px;
 }
 
+.margin-none{
+	margin : 0;
+}
+
+.p-relative{
+	position : relative;
+}
+
 .link-extend{
 	display : block;
 }
 
+.inline{
+	display : inline;
+	margin-left : 20px;
+}
+
+
+/*テキストを斜めに*/
+.naname{
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+border-radius : 50%;
+background : #2BCDFF;
+position :absolute;
+top : -30px;
+left: -30px;
+}
+
+.naname2{
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+border-radius : 50%;
+background : #2BCDFF;
+position :absolute;
+}
+
 /*----Skin-----*/
+
+/*ボーダー*/
+.border{
+	border : 3px solid orange;
+}
+
+.kadomaru{
+	border-radius : 5px;
+}
 
 /*
 文字の色とサイズ
 */
 
-.clear_text{
-	text-decoration : none;
-	list-style : none;
+.text-white{
+	color : white;
 }
 
-//表示内容のタイトル
-.contents-title{
-	font-size :2em;
-	color :#222;
 .clear-text{
 	text-decoration : none;
 	list-style : none;
@@ -280,13 +559,15 @@ footer{
 	font-weight : bold;
 }
 
-/*ページタイトル*/
+/*大見出し*/
 .contents-title{
 	margin-left : 30px;
 	margin-bottom : 10px;
+	margin-top : 20px;
 	font-size :1.8em;
 	color :#222;
 }
+/*メンバーページのテキスト「○○さんのページ」*/
 .my-page{
 	margin : 30px;
 	font-size :2.3em;
@@ -294,25 +575,60 @@ footer{
 	border-bottom:2px solid #222;
 }
 
-/*記事のタイトル*/
+/*トップページのテキスト「おすすめ記事」*/
+.recomend-title{
+	font-size :2.2em;
+	line-height : 1.2em;
+	color :white;
+	margin : 5px;
+}
+
+.triangle{
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-top: 30px solid #222;
+	border-right:10px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 10px solid transparent;
+}
+
+/* 点滅と上下 */
+.animation1{
+
+	-webkit-animation:blink 1s ease-in-out infinite alternate;
+	-webkit-animation:move1 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-webkit-keyframes move1{
+    0% {margin-top:13px;}
+    100% {margin-top:27px;}
+}
+
+
+/*中見出し*/
 .article-title{
-	font-size :1.8em;
-=======
-	margin : 30px;
-	font-size :1.5em;
+	font-size :1.4em;
+	line-height : 1.2em;
 	color :#222;
 }
 
-/*個別記事のタイトル*/
+/*小見出し*/
 
 .sub-article-title{
-	font-size :;
+	font-size :1.2em;
 	color : ;
 }
 
-/*個別記事のコメント*/
+/*小コメント*/
 .article-text{
-	font-size :;
+	font-size :1em;
+	line-height : 1.4em;
+	margin : 0;
 	color : ;
 }
 
@@ -330,11 +646,21 @@ footer{
 	line-height : 1.3em;
 }
 
+.text-shadow{
+	color : white;
+	text-shadow : 1px 1px 3px black;
+}
+
+
 /*
 背景色
 */
 .orange{
 	background-color : orange;
+}
+
+.skyblue{
+	background-color :#89D4FF;
 }
 
 .gray{
@@ -348,16 +674,20 @@ footer{
 .hadairo{
 	background : wheat;
 }
+.limegreen{
+	background : limegreen;
+}
+
+/*■■■■■■追加しました(3/10 17：30 佐藤)■■■■■■*/
+.pink{
+	background-color: #FF6C77;
+}
+/*■■■■■■ 背景色の追加ここまで ■■■■■■*/
+
 
 .shadow{
 	box-shadow :2px 1px 10px 3px rgba(0,0,0,0.1);
 }
-
-/*------------new-member----------*/
-
-
-
-
 
 
 /*スマホページ*/
