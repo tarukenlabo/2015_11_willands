@@ -28,20 +28,20 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./css/style_oocss.css" type="text/css">
 		<link rel="stylesheet" href="./css/style.css" type="text/css">
-		<title>会員登録</title> 
+		<title>お気に入り記事一覧</title> 
 	<head>
 	<body>
 		<div id="wrap" class="align-center orange">
 			<?php require 'header.php' ; ?>
 
-			<nav>
+/*			<nav>
 				<ul>
 					<li class="l-float clear-text">(★地図で選ぶ)</li>
 					<li class="l-float clear-text">(★カテゴリーで選ぶ)</li>
 					<li class="l-float clear-text">(★キーワードで選ぶ)</li>
 				</ul>
 			</nav>
-
+*/
 			<article class="clearFix white">			
 				<h2 class="contents-title align-c">お気に入り記事一覧</h2>
 	
@@ -53,10 +53,10 @@
 		$stmt->execute();
 		
 		foreach($stmt as $result):?>
-			<div class="bkm_posts">
-				<a href="article.php?P_ID=<?php echo $result['P_ID']; ?>"><img src="<?php echo $result['P_EYE']; ?>">
-				<h3 class ="sub-article-title"><?php echo $result["P_TITLE"]; ?></h3></a>
-				<button  class="button_120 white" onClick="location.href='./bkm_delete.php?p_id=<?php echo $n; ?>'">ブックマーク解除</button>
+			<div class="bkm_posts box-4 white l-float">
+				<a href="article.php?P_ID=<?php echo $result['P_ID']; ?>"><img class="photo4 white" src="<?php echo $result['P_EYE']; ?>" >
+				<h3 class ="sub-article-title align-c"><?php echo $result["P_TITLE"]; ?></h3></a><br>
+				<button class="button_120 white align-center" onClick="location.href='./bkm_delete.php?p_id=<?php echo $n; ?>'">ブックマーク解除</button>
 			</div>
 	<?php endforeach;
 	endforeach; ?>

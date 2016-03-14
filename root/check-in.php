@@ -1,16 +1,12 @@
-<<<<<<< HEAD
-﻿
-
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="./style_oocss.css" type="text/css">
-		<link rel="stylesheet" href="./style.css" type="text/css">
 		<title>(★各ページタイトル入れてください)</title>
 	<head>
 	<body>
-		<div id="wrap" class="align-center orange">
+		
 			<?php require 'header.php' ; ?>
 
 			<nav>
@@ -21,16 +17,36 @@
 				</ul>
 			</nav>
 			
-	<article class="clearFix white">
+	<article class="clearFix hadairo">
+		<!-- 現在地情報を反映した地図の表示 -->
+		<div class="box-frame shadow align_center white">
+		<h1 class="contents-title">チェックイン</h1>
 		<div class="map box-frame shadow"></div>
 	
-		<h1 class="contents-title">チェックイン</h1>
-		<div class="box-frame shadow align_center">
+		
+		
 		<form method="POST" action="checkin_upload.php" enctype="multipart/form-data">
-		<p class="other-text">位置：</p>
-		<p><input type="button" value="写真選択" onclick=""></p>
-		<p class="other-text">コメント：<textarea name="comment"></textarea></p>
-		<p><input type="submit" value="登録"><input type="reset" value="リセット"></p>
+		<p class="contents-title">位置：
+
+		<!-- 現在地情報を反映した緯度・経度の表示 -->
+			<table class="position" border="1" cellspacing="0">
+			<tr><th>緯度</th><td id="show_lat"></td></tr>
+			<tr><th>経度</th><td id="show_lng"></td></tr>
+			</table></p>
+
+
+		<p class="contents-title">写真選択：<input type="file" name="uPhoto" value="写真選択"></p>
+		
+		
+		<form action="./checkin_upload.php?p_id=<?php echo $_GET['p_id'] ;?>" method="POST" enctype="multipart/form-data">
+		<p class="contents-title">タイトル：<input type="text" name="uTitle"></p>
+		<p class="contents-title">コメント：<textarea name="comment"></textarea></p>
+		<div>
+			<input type="hidden" name="uLat" id="userLatitude">
+			<input type="hidden" name="uLng" id="userLongitude">
+			<p><input class="check_button" type="submit" value="登録"><input class="check_button" type="reset" value="リセット"></p>
+		</div>
+		</form>
 		</form>
 		</div>
 		
@@ -42,8 +58,7 @@
 </html>
 
 	
-=======
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -134,33 +149,16 @@ function setGio( lat,lng){
 		width: 95%;
 		height:500px;
 	}
+	
+	.position{
+	margin-left : 30px;
+	margin-bottom : 10px;
+	margin-top : 20px;
+	color :#222;
+}
 </style>
 </head>
-<body>
-<!-- 現在地情報を反映した地図の表示 -->
-	<div class="map"></div>
-<!-- 現在地情報を反映した緯度・経度の表示 -->
-	<p>
-		<table border="1" cellspacing="0">
-		<tr><th>緯度</th><td id="show_lat"></td></tr>
-		<tr><th>経度</th><td id="show_lng"></td></tr>
-		</table>
-	</p>
 
-	<form action="./checkin_upload.php?p_id=<?php echo $_GET['p_id'] ;?>" method="POST" enctype="multipart/form-data">
-		<p>タイトル<input type="text" name="uTitle"></p>
-		<p><input type="file" name="uPhoto" value="写真選択"></p>
-		<p>コメント：<textarea name="uComment"></textarea></p>
-		<div>
-			<input type="hidden" name="uLat" id="userLatitude">
-			<input type="hidden" name="uLng" id="userLongitude">
-			<input type="submit" id="sender" val="送信する">
-		</div>
-	</form>
-</body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 6ec0ce41ce519a5fafafa7f4cc6f1537050d9402
->>>>>>> 209bf335e714084519f27ebfbcf98c5767064b1a
+
+

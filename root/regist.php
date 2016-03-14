@@ -4,8 +4,18 @@
 
 	
 	//カテゴリサーチ
-	$searcObj = new Search( $_POST );
+	$searchObj = new Search( $_POST );
+	$key_array = $searchObj -> getKeyArray();
 	
 	echo "<pre>";
-	var_dump( $searcObj -> searchText["search_text"] );
+	
+	var_dump( $searchObj -> searchRun( $key_array ) );
+	
 	echo "</pre>";
+	
+	$stmt = $searchObj -> searchRun( $key_array );
+	foreach( $stmt as $val ){
+		echo "<pre>";
+		var_dump( $val );
+		echo "</pre>";
+	}
