@@ -12,6 +12,12 @@
 	$stmt = $dbh->prepare($get_post);
 	$stmt->execute();
 	
+	//ログインしてるか判断
+ 	session_start();
+ 	if(isset($_SESSION['u_id'])){
+ 		$u_id = $_SESSION['u_id'];
+ 	}
+	
 	//しおり内容を変数に格納
 	foreach($stmt as $post){
 		$title = $post['P_TITLE'];
@@ -90,7 +96,10 @@
 		<div class="align-c">
 		
 			<h2><?php echo $title; ?></h2>
-			<button class="bkm" onClick="location.href='./bkm.php?p_id=<?php echo $p_id; ?>'">お気に入り</button>
+			
+			<?php if(isset($_SESSION['u_id'])): ?>
+				<button class="bkm" onClick="location.href='./bkm.php?p_id=<?php echo $p_id; ?>'">お気に入り</button>
+			<?php endif; ?>
 
 		
 		</div>
@@ -181,9 +190,7 @@
 			
 		</div>
 		
-		<?php if(empty($u_id)): ?>
-			
-		<?php else: ?>
+		<?php if(isset($_SESSION['u_id'])): ?>
 			<a href="./comment-form.php?p_id=<?php echo $p_id; ?>"><p>コメントを投稿する</p></a>
 		<?php endif; ?>
 

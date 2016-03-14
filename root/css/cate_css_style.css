@@ -1,0 +1,67 @@
+.posi_re {
+	position:relative;
+}
+
+
+nav ul li ul {
+	position:absolute;
+	top:120px;
+	width:180px;
+	z-index:100;
+}
+
+
+nav ul li ul li {
+	visibility:hidden;
+	overflow:hidden;
+	width:480px;/*サブメニューの幅*/
+	height:0;
+	background:yellow;/*サブメニューの背景色*/
+	color:black;
+}
+
+nav ul li ul:hover, nav ul li ul li a:hover {
+	background:orange;/*ホバー時のサブメニューの背景色*/
+	width:480px;
+}
+
+nav ul li:hover ul li, nav ul li a:hover ul li {
+	visibility:visible;
+	overflow:visible;
+	height:40px;
+	z-index:10;
+	width:480px;
+
+
+}
+.cate_sub_navi a {
+	display:block;
+	line-height:40px;
+	color:black;
+}
+
+.cate_sub_navi a:hover {
+	background:orange;/*ホバー時のサブメニューの背景色*/
+}
+
+nav * {
+	transition:0.5s;
+}
+
+.large-large-photo_img {
+	width:350px;
+	height:320px;
+}
+
+.post_top_img {
+	width:300px;
+}
+
+.check_in_photo {
+	width:200px;
+}
+
+
+.li_style {
+	padding-left:12px;
+}

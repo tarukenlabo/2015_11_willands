@@ -21,7 +21,7 @@ a {
 		$stmt->execute();
 		
 		foreach($stmt as $post):?>
-			<a href="./result.php?cate=<?php echo $post['CATE_ID']; ?>"><li class="cate"><?php echo $post['CATE_NAME'] ?></li></a>
+			<li class="cate_sub_navi"><a href="./result.php?cate=<?php echo $post['CATE_ID']; ?>"><?php echo $post['CATE_NAME'] ?></a></li>
 		<?php endforeach;
 	}
 	

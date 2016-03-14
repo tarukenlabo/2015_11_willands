@@ -9,9 +9,9 @@
 	session_start();
 	
 	$p_id = h($_GET['p_id']);
-	$u_id = 18;
+	$u_id = $_SESSION['u_id'];
 	
-	$delbkm = "DELETE FROM bookmark WHERE P_ID = ".$p_id."&& U_ID = ".$u_id;
+	$delbkm = "DELETE FROM bookmark WHERE P_ID = ".$p_id." && U_ID = ".$u_id;
 	$stmt = $dbh->prepare($delbkm);
 	$stmt->execute();
 	echo $delbkm;

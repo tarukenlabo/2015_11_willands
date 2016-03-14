@@ -1,13 +1,10 @@
 <?php
 	session_start();
 	$u_id = $_SESSION['u_id'];
-
 	require_once("./functions.php");
 	require_once("./user.php");
 	require_once("./post.php");
-
 	$u_info = search_user_by_uid($_SESSION['u_id']);
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +32,7 @@
 				
 				<div class="box-frame shadow align-center white clearFix">
 					<p class="article-title l-float">旅行記一覧</p>
-					<button type="button" onclick="location.href='./trip_flame.php?u_id=<?php echo $u_id; ?>'"  class="box-line1 r-float"><a class=" clear-text"><p class="other-title bold">新しい旅行記を作成</p></a></button>
+<button type="button" onclick="location.href='./trip-frame.php?u_id=<?php echo $u_id; ?>'"  class="box-line2 r-float"><a class=" clear-text"><p class="other-title bold">新しい旅行記を作成</p></a></button>
 
 					<?php $stmt = search_u_id($_SESSION['u_id']); ?>
 					<?php foreach($stmt as $post): ?>
