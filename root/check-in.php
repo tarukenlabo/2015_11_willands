@@ -38,10 +38,11 @@
 		<p class="contents-title">写真選択：<input type="file" name="uPhoto" value="写真選択"></p>
 		
 		
-		<form action="./checkin_upload.php?p_id=<?php echo $_GET['p_id'] ;?>" method="POST" enctype="multipart/form-data">
+		<form action="./checkin_upload.php" method="POST" enctype="multipart/form-data">
 		<p class="contents-title">タイトル：<input type="text" name="uTitle"></p>
 		<p class="contents-title">コメント：<textarea name="comment"></textarea></p>
 		<div>
+			<input type="hidden" name="p_id" value="<?php echo $_GET['p_id'] ;?>">
 			<input type="hidden" name="uLat" id="userLatitude">
 			<input type="hidden" name="uLng" id="userLongitude">
 			<p><input class="check_button" type="submit" value="登録"><input class="check_button" type="reset" value="リセット"></p>

@@ -6,8 +6,7 @@
 	session_start();
 	
 	$user_id = $_SESSION["u_id"];
-	$post_id = $_GET["p_id"];
-	
+	$post_id = $_POST["p_id"];
 	
 	$error = new ErrorHandling;
 	$image_obj = new ImageObj;
@@ -80,7 +79,7 @@
 	}
 	
 	//post_check_inへの登録
-	$insert_sql = "INSERT INTO post_check_in(P_ID,U_ID,C_TITLE,C_POSIX,C_POSIY,C_DATE,C_COMMENT,M_ID) VALUES( ".$post_id.",".$user_id.",'".$_POST["uTitle"]."',".$_POST["uLat"].",".$_POST["uLng"].",now(),'".$_POST["uComment"]."',".$map_id["ID"]." )";
+	$insert_sql = "INSERT INTO post_check_in(P_ID,U_ID,C_TITLE,C_POSIX,C_POSIY,C_DATE,C_COMMENT,M_ID) VALUES( ".$post_id.",".$user_id.",'".$_POST["uTitle"]."',".$_POST["uLat"].",".$_POST["uLng"].",now(),'".$_POST["comment"]."',".$map_id["ID"]." )";
 	$stmt = $dbh->prepare($insert_sql);
 	$stmt->execute();
 	
